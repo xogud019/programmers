@@ -13,12 +13,11 @@ public class TermExam {
     }    
 
     public static int[] solution(int[] answer){
+        List<Integer> list = new ArrayList<>();
         int[] result ={};
         int[][] studentAnswer={{1,2,3,4,5},{2,1,2,3,2,4,2,5},{3,3,1,1,2,2,4,4,5,5}};
         int[] temp = new int[3];
-        int count=0;
-        int index=0;
-        int correct=0;
+        int count = 0, index = 0, correct = 0, max = 0;
 
         while(index!=3){
             for(int i=0; i<answer.length; i++){
@@ -38,9 +37,25 @@ public class TermExam {
             correct=0;
             index++;
         }
+
+        max =temp[0];
+
+        for(int i=0; i<temp.length; i++){
+            if(temp[i]>max){
+                max = temp[i];
+            }
+        }
+
+        for(int i=0; i<temp.length; i++){
+            if(temp[i]==max){
+                list.add(i+1);
+            }
+        }
         
-        
-       
+       result = new int[list.size()];
+       for(int i=0; i<list.size(); i++){
+           result[i]=list.get(i);
+       }
         
         return result;
     }
