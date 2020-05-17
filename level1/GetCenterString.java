@@ -7,13 +7,11 @@ public class GetCenterString {
     }
 
     public static String solution(String s){
-        String answer ="";
         int n = s.length();
-        if(n%2==0){
-            return answer =  Character.toString(s.charAt(n/2-1))+ Character.toString(s.charAt(n/2));
-        }
-        else{
-            return answer = Character.toString(s.charAt(n/2));
+        if (n % 2 == 0) {
+            return Character.toString(s.charAt(n / 2 - 1)) + Character.toString(s.charAt(n / 2));
+        } else {
+            return Character.toString(s.charAt(n / 2));
         }
     }
 }
