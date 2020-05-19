@@ -2,8 +2,8 @@ package level1;
 
 public class WeirdString {
     public static void main(String[] args){
-        String s = "  try hello world  ";
-        System.out.println(solution(s)+1);
+        String s = " AAA A A A  ";
+        System.out.println(solution(s));
     }
 
     public static String solution(String s){
@@ -31,6 +31,10 @@ public class WeirdString {
             if(i!=temp.length-1){
                 answer+=" ";
             }
+        }
+        
+        if(answer.length()>s.length()){
+            return answer.substring(0, answer.length()-1);
         }
 
         return answer;
