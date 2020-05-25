@@ -1,5 +1,4 @@
 package level2;
-import java.util.*;
 
 public class Tower {
     public static void main(String[] args){
