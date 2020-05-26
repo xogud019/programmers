@@ -1,7 +1,7 @@
 package level2;
 import java.util.*;
 
-public class BridegeTruck {
+public class BrideeTruck {
     public static void main(String[] args){
         int bridge_length = 2;
         int weight = 10;
