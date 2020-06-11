@@ -9,49 +9,47 @@ public class Budget {
     }
     
     public static int solution(int[] budgets, int M){
-        int answer = 0;
-        Arrays.sort(budgets);
-        int min = budgets[0];
-        int max = M;
+        long total = 0;
+        int min = 0;
+        int max = 0;
         int mid = 0;
         int temp = 0;
-        long total = 0;
+        Arrays.sort(budgets);
 
         for(int i=0; i<budgets.length; ++i){
-            total+=budgets[i];
+            total += budgets[i];
         }
 
         if(total<=M){
             return budgets[budgets.length-1];
         }
-        else{
-            while(true){
-                total = 0;
-                mid = (max+min)/2;
-                if(mid == temp){
-                    break;
-                }
 
-                for(int i=0; i<budgets.length; ++i){
-                    if(mid<=budgets[i]){
-                        total+= mid*(budgets.length-i);
-                        break;
-                    }
-                    else{
-                        total+=budgets[i];
-                    }
-
-                }
-                if(total<=M){
-                    min = mid;
+        max = M;
+        while(true){
+            mid = (min+max)/2;
+            
+            if(mid==temp){
+                return mid;
+            }
+            for(int i=0; i<budgets.length; i++){
+                if(mid>=budgets[i]){
+                    total+=budgets[i];
                 }
                 else{
-                    max = mid;
+                    total+=mid*(budgets.length-i);
+                    break;
                 }
-                temp = mid;
             }
-            answer = mid;
+
+            if(total>M){
+                max = mid;
+
+            }
+            else{
+                min = mid;
+            }
+            temp = mid;
+            total=0;
         }
-        return answer;
     }
 }
