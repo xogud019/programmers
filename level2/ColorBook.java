@@ -1,4 +1,5 @@
 package level2;
+import java.util.*;
 
 public class ColorBook {
     static int MAX = 0;
@@ -16,44 +17,54 @@ public class ColorBook {
     public static int[] solution(int m, int n, int[][] picture){
         int[] answer = new int[2];
         boolean[][] visited = new boolean[m][n];
-        int total = 0;
+        Stack<Integer> XStack = new Stack<>();
+        Stack<Integer> YStack = new Stack<>();
+        
+
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
-                int temp = picture[i][j];
-                int max =0;
-                if(!visited[i][j]){
-                    if(picture[i][j]!=0){
-                        System.out.println(temp);
-                        System.out.println(i+","+j);
-                        dfs(picture, visited, max, temp, i,j);
-                        total++;
+                int count = 0;
+                if(picture[i][j]!=0&&!visited[i][j]){
+                    XStack.push(j);
+                    YStack.push(i);
+                    visited[i][j]=true;
+                    count++;
+                    answer[0]++;
+                }
+
+                while(!XStack.isEmpty()){
+                    int x = XStack.pop();
+                    int y = YStack.pop();
+
+                    if(y>0&&picture[y-1][x]==picture[i][j]&&!visited[y-1][x]){
+                        XStack.push(x);
+                        YStack.push(y-1);
+                        count++;
+                        visited[y-1][x] = true;
+                    }
+                    if(x>0&&picture[y][x-1]==picture[i][j]&&!visited[y][x-1]){
+                        XStack.push(x-1);
+                        YStack.push(y);
+                        count++;
+                        visited[y][x-1] = true;
+                    }
+                    if(y<m-1&&picture[y+1][x]==picture[i][j]&&!visited[y+1][x]){
+                        XStack.push(x);
+                        YStack.push(y+1);
+                        count++;
+                        visited[y+1][x] = true;
+                    }
+                    if(x<n-1&&picture[y][x+1]==picture[i][j]&&!visited[y][x+1]){
+                        XStack.push(x+1);
+                        YStack.push(y);
+                        count++;
+                        visited[y][x+1] = true;
                     }
                 }
-            }
-        }
-        for(int i=0; i<visited.length; i++){
-            for(int j=0; j<visited[i].length; j++){
-                System.out.print(visited[i][j]+" ");
-            }
-            System.out.println();
-        }
-        
-        answer[0] = MAX;
-        answer[1] = total;
-        return answer;
-    }
 
-    public static void dfs(int[][] picture,boolean[][] visited, int max, int temp, int index, int start){
-        if(index==picture.length){
-            return;
-        }
-        for(int j=start; j<picture[index].length; j++){
-            if(!visited[index][j]&&picture[index][j]==temp){
-                max++;
-                visited[index][j]=true;
-                dfs(picture, visited, max, temp, index+1, start);
+                answer[1] = Math.max(answer[1],count);
             }
         }
-        
+        return answer;
     }
 }
