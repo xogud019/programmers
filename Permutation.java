@@ -1,9 +1,7 @@
 public class Permutation {
     public static void main(String[] args){
         char[] s = {'A','B','C'};
-        perm(s, 0, s.length);
-        String ss = "s";
-        
+        perm(s, 0, s.length);        
     }   
 
     public static void perm(char[] s, int depth, int max){
