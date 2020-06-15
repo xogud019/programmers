@@ -20,7 +20,13 @@ public class ColorBook {
         Stack<Integer> XStack = new Stack<>();
         Stack<Integer> YStack = new Stack<>();
         
-        
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                if(picture[i][j]!=0&&!visited[i][j]){
+                    
+                }
+            }
+        }
         
         return answer;
     }
