@@ -12,39 +12,43 @@ public class Compress {
 
     public static int[] solution(String msg) {
         int[] answer = {};
-        int index = 1;
         int dicIdx =27;
+        int index = 1;
         Map <String, Integer> dic = new HashMap<>();
-        List<Integer> temp = new ArrayList<>();
         List<Integer> idx = new ArrayList<>();
 
         for(int i=0; i<26; i++){
             dic.put(Character.toString((char)('A'+i)), i+1);
         }
-        /*
-        for(String c: dic.keySet()){
-            System.out.println(c+","+dic.get(c));
-        }
-        */
+        
         String start = Character.toString(msg.charAt(0));
-        while(index<msg.length()){
+
+        while(index<=msg.length()){
+            if(index==msg.length()){
+                idx.add(dic.get(start));
+                break;
+            }
+
             String next = Character.toString(msg.charAt(index));
+
             if(dic.containsKey(start+next)){
                 start+=next;
                 index++;
+                continue;
             }
             else{
+                dic.put(start+next, dicIdx);
                 idx.add(dic.get(start));
+                start=next;
             }
-            System.out.println(start+","+next+","+start+next);
-            dic.put(start+next, dicIdx);
-            start = next;
-            dicIdx++;
+
             index++;
+            dicIdx++;
         }
 
+        answer =new int[idx.size()];
         for(int i=0; i<idx.size(); i++){
-            System.out.println(idx.get(i));
+            answer[i]=idx.get(i);
         }
         return answer;
     }
