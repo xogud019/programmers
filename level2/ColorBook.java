@@ -1,6 +1,6 @@
 package level2;
 import java.util.*;
-//not
+
 public class ColorBook {
     static int MAX = 0;
     public static void main(String[] args){
