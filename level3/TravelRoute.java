@@ -6,23 +6,18 @@ public class TravelRoute {
         //String[][] tickets = {{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}};
         String[][] tickets = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
         String[] result = solution(tickets);
-    
+        
         for(int i=0; i<result.length; i++){
             System.out.print(result[i]+" ");
         }
     }
 
     public static String[] solution(String[][] tickets) {
-        String[] answer = {};
-        Arrays.sort(tickets);
-        print(tickets);
-        return answer;
+        
     }
 
-    public static void dfs(int depth, int max){
-        if(depth==max){
-            return;
-        }
+    public static void dfs(String[][] tickets, String end, int depth){
+        
     }
 
     public static void print(String[][] arr){
