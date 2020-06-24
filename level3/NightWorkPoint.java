@@ -1,6 +1,6 @@
 package level3;
 import java.util.*;
-//not
+
 public class NightWorkPoint {
     public static void main(String[] args){
         int n = 4;
