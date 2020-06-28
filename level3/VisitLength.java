@@ -1,62 +1,64 @@
 package level3;
-//not
+
 public class VisitLength {
     public static void main(String[] args){
-        String dirs ="ULURRDLLU";
+        //String dirs ="ULURRDLLU";
+        //String dirs ="LURDLURD";
+        String dirs ="UUUUUUUR";
         
         System.out.println(solution(dirs));
     }
 
     public static int solution(String dirs) {
         int answer = 0;
-        int idx = 0;
-        int idy = 0;
+        boolean[][] uD = new boolean[11][11];
+        boolean[][] lR = new boolean[11][11];
         Point point = new Point();
-        boolean[][] route = new boolean[dirs.length()][2];
+
         for(int i=0; i<dirs.length(); i++){
             if(dirs.charAt(i)=='U'){
-                if(point.y<5){
-                    point.y +=1;
-                    idy++;
-                    if(!route[idx][idy]){
+                if(point.y<10){
+                    point.y+=1;
+                    if(!uD[point.x][point.y]){
                         answer++;
                     }
+                    uD[point.x][point.y] = true;
                 }
             }
             else if(dirs.charAt(i)=='D'){
-                if(point.y>-5){
-                    point.y -=1;
-                    idy--;
-                    if(!route[idx][idy]){
+                if(point.y>0){
+                    if(!uD[point.x][point.y]){
                         answer++;
                     }
+                    uD[point.x][point.y] = true;
+                    point.y-=1;                    
                 }
             }
             else if(dirs.charAt(i)=='R'){
-                if(point.x<5){
-                    point.x +=1;
-                    idx++;
-                    if(!route[idx][idy]){
+                if(point.x<10){
+                    point.x+=1;
+                    if(!lR[point.x][point.y]){
                         answer++;
                     }
+                    lR[point.x][point.y] = true;
                 }
             }
             else{
-                if(point.x>-5){
-                    point.x -=1;
-                    idx--;
-                    if(!route[idx][idy]){
+                if(point.x>0){
+                    if(!lR[point.x][point.y]){
                         answer++;
                     }
+                    lR[point.x][point.y] = true;
+                    point.x-=1;
                 }
-            }  
+            }
         }
-        System.out.println(point.x+","+point.y);
+
         return answer;
     }
 
     static class Point{
-        int x = 0;
-        int y = 0;
+        int x = 5;
+        int y = 5;
     }
 }
