@@ -14,39 +14,32 @@ public class BestAlbum {
 
     public static int[] solution(String[] genres, int[] plays){
         int[] answer ={};
-        HashMap<String, String> map = new HashMap<>();
-
-        for(int i=0; i<genres.length; i++){
-            map.put(Integer.toString(i), genres[i]+","+plays[i]);
-        }
-
-        List<String> keySetList = new ArrayList<>(map.keySet());
-        // 내림차순 //
-        Collections.sort(keySetList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                String[] s1 = map.get(o1).split(",");
-                String[] s2 = map.get(o2).split(",");
-                String v1 = s1[0];
-                String v2 = s2[0];
-                int a = Integer.parseInt(s1[1]);
-                int b = Integer.parseInt(s2[1]);
-                if(v1.equals(v2)){
-                    return a-b;
-                }
-                else{
-                    return v1.compareTo(v2);
-                }
+        Map<String, Integer> tolPlay = new HashMap<>();
+        Map<Integer, String> gMap = new HashMap<>();
+        Map<Integer, Integer> pMap = new HashMap<>();
+        for(int i=0; i<plays.length; i++){
+            if(tolPlay.containsKey(genres[i])){
+                tolPlay.put(genres[i], tolPlay.get(genres[i])+plays[i]);
             }
-        });
-        
-        for(String i:map.keySet()){
-            System.out.println(i+","+map.get(i));
+            else{
+                tolPlay.put(genres[i], plays[i]);
+            }
         }
-        
-        //print(music);
-        
-        
+
+        for(int i=0; i<plays.length; i++){
+            gMap.put(i+1, genres[i]);
+            pMap.put(i+1, plays[i]);
+        }
+
+        for(String k:tolPlay.keySet()){
+            System.out.println(k+","+tolPlay.get(k));
+        }
+        for(Integer k:gMap.keySet()){
+            System.out.println(k+","+gMap.get(k));
+        }
+        for(Integer k:pMap.keySet()){
+            System.out.println(k+","+pMap.get(k));
+        }
         return answer;
     }
 
