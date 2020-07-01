@@ -1,6 +1,6 @@
 package level3;
 import java.util.*;
-//not
+
 public class BestAlbum {
     public static void main(String[] args){
         String[] genres = {"classic","pop","classic","pop","classic"};
