@@ -2,84 +2,82 @@ package level2;
 import java.util.*;
 
 public class MaxExpression {
-    static List<String> operator = new ArrayList<>();
 
     public static void main(String[] args){
         String expression = "100-200*300-500+20";
-
+        //60420
         System.out.println(solution(expression));
     }
-
+//100-60000-500+20
     public static long solution(String expression){
         long answer = 0;
-        Stack<Integer> operand = new Stack<>();
-        Set<Character> oper = new HashSet<>();
+        String[][] rotate = {{"*","+","-"},{"*","-","+"},{"+","*","-"},{"+","-","*"},{"-","+","*"},{"-","*","+"}};
+        String[] num = expression.split("[*||+||-]");
+        expression =  expression.replaceAll("[0-9]", "").trim();
+        String[] oper = expression.split("");
+        Stack<String> operand;
+        Stack<String> operator;
 
-        for(int i=0; i<expression.length(); i++){
-            if(expression.charAt(i)=='*'||expression.charAt(i)=='+'||expression.charAt(i)=='-'){
-                oper.add(expression.charAt(i));
+        for(int i=0; i<rotate.length; i++){
+            String[] nums = new String[num.length];
+            nums = num;
+
+            for(int j=0; j<rotate[i].length; j++){
+                operand = new Stack<>();
+                operator = new Stack<>();
+
+                operand.push(nums[0]);
+
+                for(int k=0; k<oper.length; k++){
+                    operand.push(num[k+1]);
+                    operator.push(oper[k]);
+
+                    if(operator.peek().equals(rotate[i][j])){
+                        int num2 = Integer.parseInt(operand.pop());
+                        int num1 = Integer.parseInt(operand.pop());
+                        String op = operator.pop();
+                        operand.push(calc(num1, num2, op));
+                    }
+                }
+
+                nums[0] = operand.pop();
+                
+                
             }
         }
+            
+            
+            /*
+            if(answer<Math.abs(Integer.parseInt(operand.peek()))){
+                answer = Math.abs(Integer.parseInt(operand.pop()));
+            }
+            */
+        
 
+        // System.out.println(operand.size());
         /*
-        expression = expression.replaceAll("[*||+||-]", "_");
-        String[] temp = expression.split("_");
-        int[] num =new int[temp.length];
-        for(int i=0; i<temp.length; i++){
-            num[i]= Integer.parseInt(temp[i]);
-        }
-        */
-        //System.out.println(expression);
-        char[] s = new char[oper.size()];
-        int index = 0;
-        for(char c:oper){
-            s[index] =c;
-            index++;
-        }
-
-        perm(s, 0, s.length);
-
-        for(int i=0; i<)
-        /*
-        for(String k:operator){
+        for(String k : tempNum){
             System.out.println(k);
         }
         */
+        //System.out.println(expression.trim());
         /*
-        for(int i=0; i<operator.size(); i++){
-
+        for(String k : oper){
+            System.out.println(k);
         }
-        */        
+        */
         return answer;
-    }
+    }   
 
-    public static void perm(char[] s, int depth, int max){
-        if(depth==max){
-            String temp = "";
-            for(int i=0; i<s.length; i++){
-                temp+=s[i];
-            }
-
-            operator.add(temp);
-            return;
+    public static String calc(int n1, int n2, String oper){
+        if(oper.equals("*")){
+            return Integer.toString(n1*n2);
         }
-        for(int i=depth; i<s.length; i++){
-            swap(s, i, depth);
-            perm(s, depth+1, max);
-            swap(s, i, depth);
+        else if(oper.equals("+")){
+            return Integer.toString(n1+n2);
         }
-    }
-
-    public static void print(char[] s){
-        for(int i=0; i<s.length; i++){
-            System.out.print(s[i]);
+        else{
+            return Integer.toString(n1-n2);
         }
-        System.out.println();
-    }
-
-    public static void swap(char[] s, int i, int j){
-        char temp = s[i];
-        s[i] = s[j];
-        s[j] = temp;
     }
 }
