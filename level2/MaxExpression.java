@@ -4,8 +4,9 @@ import java.util.*;
 public class MaxExpression {
 
     public static void main(String[] args){
-        String expression = "100-200*300-500+20";
-        //60420
+        //String expression = "100-200*300-500+20";
+        String expression = "50*6-3*2";
+        
         System.out.println(solution(expression));
     }
 //100-60000-500+20
@@ -17,67 +18,67 @@ public class MaxExpression {
         String[] oper = expression.split("");
         Stack<String> operand;
         Stack<String> operator;
+        List<String> nums = new ArrayList<>();
+        List<String> opers = new ArrayList<>();
 
         for(int i=0; i<rotate.length; i++){
-            String[] nums = new String[num.length];
-            nums = num;
-
+            nums.clear();
+            opers.clear();
+            for(int ii=0; ii<num.length; ii++){
+                nums.add(num[ii]);
+            }
+            for(int ii=0; ii<oper.length; ii++){
+                opers.add(oper[ii]);
+            }
             for(int j=0; j<rotate[i].length; j++){
                 operand = new Stack<>();
                 operator = new Stack<>();
 
-                operand.push(nums[0]);
-
-                for(int k=0; k<oper.length; k++){
-                    operand.push(num[k+1]);
-                    operator.push(oper[k]);
+                operand.push(nums.get(0));
+                for(int k=0; k<opers.size(); k++){
+                    operand.push(nums.get(k+1));
+                    operator.push(opers.get(k));
 
                     if(operator.peek().equals(rotate[i][j])){
-                        int num2 = Integer.parseInt(operand.pop());
-                        int num1 = Integer.parseInt(operand.pop());
+                        long num2 = Long.parseLong(operand.pop());
+                        long num1 = Long.parseLong(operand.pop());
                         String op = operator.pop();
                         operand.push(calc(num1, num2, op));
                     }
                 }
 
-                nums[0] = operand.pop();
-                
-                
-            }
-        }
-            
-            
-            /*
-            if(answer<Math.abs(Integer.parseInt(operand.peek()))){
-                answer = Math.abs(Integer.parseInt(operand.pop()));
-            }
-            */
-        
+                nums.clear();
+                opers.clear();
 
-        // System.out.println(operand.size());
-        /*
-        for(String k : tempNum){
-            System.out.println(k);
+                while(!operand.isEmpty()){
+                    nums.add(operand.pop());
+                }
+
+                while(!operator.isEmpty()){
+                    opers.add(operator.pop());
+                }
+                Collections.reverse(nums);
+                Collections.reverse(opers);
+            }
+
+            if(nums.size()==1){
+                answer = Math.max(answer, Math.abs(Long.parseLong(nums.get(0))));
+            }
+            
         }
-        */
-        //System.out.println(expression.trim());
-        /*
-        for(String k : oper){
-            System.out.println(k);
-        }
-        */
+        
         return answer;
     }   
 
-    public static String calc(int n1, int n2, String oper){
+    public static String calc(long n1, long n2, String oper){
         if(oper.equals("*")){
-            return Integer.toString(n1*n2);
+            return Long.toString(n1*n2);
         }
         else if(oper.equals("+")){
-            return Integer.toString(n1+n2);
+            return Long.toString(n1+n2);
         }
         else{
-            return Integer.toString(n1-n2);
+            return Long.toString(n1-n2);
         }
     }
 }
