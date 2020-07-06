@@ -1,9 +1,8 @@
 package level3;
-import java.util.*;
-//study dijkstra
+//study dijkstra, FloydWarshall
+
 //not
 public class Delivery {
-    static List<Integer> vertax = new ArrayList<>();
     
     public static void main(String[] args){
         int N = 5;
@@ -15,79 +14,52 @@ public class Delivery {
 
     public static int solution(int N, int[][] road, int K) {
         int answer = 0;
-        Graph g = new Graph(N);
-
-        for(int i=0; i<road.length; i++){
-            g.input(road[i][0], road[i][1],road[i][2]);
+        int max = 500001;
+        int[][] board = new int[N][N];
+        int row = board.length;
+        int col = board[0].length;
+        
+        print(road);
+        for(int i=0; i<row; i++){
+            for(int j=0; j<col; j++){
+                if(i==j){
+                    board[i][j] = 0;
+                    continue;
+                }
+                board[i][j] = max;
+            }
         }
-    
-        g.dijkstra(1);
+        for(int i=0; i<road.length; i++){
+            if(board[road[i][0]-1][road[i][1]-1]<road[i][2]) continue;
+            board[road[i][0]-1][road[i][1]-1]= road[i][2];
+            board[road[i][1]-1][road[i][0]-1]= road[i][2];
+        }
 
-        for(int i:vertax){
-            if(i<=K){
+        for(int k=0; k<N; k++){
+            for(int i=0; i<N; i++){
+                for(int j=0; j<N; j++){
+                    if(i==j) continue;
+                    if(board[i][j]>board[i][k]+board[k][j]){
+                        board[i][j]=board[i][k]+board[k][j];
+                    }
+                }
+            }
+        }
+
+        for(int i=0; i<row; i++){
+            if(board[0][i]<=K){
                 answer++;
             }
         }
+        print(board);
         return answer;
     }
-
-    static class Graph{
-        int n;
-        int[][] map;
-
-        public Graph(int n){
-            this.n = n;
-            this.map = new int[n+1][n+1];
-        }
-
-        public void input(int i, int j, int w){
-            map[i][j] = w;
-            map[j][i] = w;
-        }
-
-        public void dijkstra(int v){
-            int[] distance = new int[n+1];
-            boolean[] visited = new boolean[n+1];
-
-            for(int i=1; i<=n; i++){
-                distance[i]=Integer.MAX_VALUE;
+    public static void print(int[][] triangle){
+        for(int i=0; i<triangle.length; i++){
+            for(int j=0; j<triangle[i].length; j++){
+                System.out.print(triangle[i][j]+" ");
             }
-
-            distance[v] = 0;
-            visited[v] = true;
-
-            for(int i=1; i<=n; i++){
-                if(!visited[i]&&map[v][i]!=0){
-                    distance[i] = map[v][i];
-                }
-            }
-
-            for(int i=0; i<n-1; i++){
-                int min = Integer.MAX_VALUE;
-                int idx = -1;
-
-                for(int j=1; j<=n; j++){
-                    if(!visited[j]&&distance[j]!=Integer.MAX_VALUE){
-                        if(distance[j]<min){
-                            min = distance[j];
-                            idx = j;
-                        }
-                    }
-                }
-
-                visited[idx] = true;
-                for(int j=1; j<=n; j++){
-                    if(!visited[j]&&map[idx][j]!=0){
-                        if(distance[j]>distance[idx]+map[idx][j]){
-                            distance[j]=distance[idx]+map[idx][j];
-                        }
-                    }
-                }
-            }
-
-            for(int i =1; i<=n; i++){
-                vertax.add(distance[i]);
-            }
+            System.out.println();
         }
     }
 }
