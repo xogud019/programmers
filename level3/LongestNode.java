@@ -1,4 +1,5 @@
 package level3;
+import java.util.*;
 
 public class LongestNode{
     public static void main(String[] args){
@@ -8,6 +9,46 @@ public class LongestNode{
         System.out.println(solution(n, vertax));
     }
 
+    public static int solution(int n, int[][] edge){
+        int answer = 0;
+        List<ArrayList<Integer>> list = new ArrayList<>();
+        //Queue<Integer> pq = new PriorityQueue<>();
+        Queue<Integer> pq = new LinkedList<>();
+        int[] visited = new int[n];
+        int max = 0;
+
+        for(int i=0; i<n; i++){
+            list.add(new ArrayList<>());
+        }
+
+        for(int i=0; i<edge.length; i++){
+            list.get(edge[i][0]-1).add(edge[i][1]-1);
+            list.get(edge[i][1]-1).add(edge[i][0]-1);
+        }
+
+        visited[0] = 1;
+        pq.add(0);
+
+        while(!pq.isEmpty()){
+            int temp = pq.poll();
+
+            for(int i:list.get(temp)){
+                if(visited[i]==0){
+                    pq.add(i);
+                    visited[i] = visited[temp]+1;
+                    max = Math.max(max, visited[i]);
+                }
+            }
+        }
+
+        for(int i=0; i<visited.length; i++){
+            if(visited[i]==max){
+                answer++;
+            }
+        }
+        return answer; 
+    }
+    /*failed case ->time out
     public static int solution(int n, int[][] edge){
         int answer = 0;
         int max = 20001;
@@ -53,7 +94,7 @@ public class LongestNode{
 
         return answer;
     }
-
+    */
     public static void print(int[][] triangle){
         for(int i=0; i<triangle.length; i++){
             for(int j=0; j<triangle[i].length; j++){
