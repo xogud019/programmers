@@ -14,12 +14,6 @@ public class Track {
         return answer;
     }
 
-    public static void dfS(int[][] board, int x, int y, int row, int col){
-        if(x==row&&y==col){
-            return;
-        }
-    }
-
     public static void print(int[][] triangle){
         for(int i=0; i<triangle.length; i++){
             for(int j=0; j<triangle[i].length; j++){
