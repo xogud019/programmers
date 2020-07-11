@@ -1,6 +1,6 @@
 package level3;
 import java.util.*;
-
+//not
 public class WallInspection {
     public static void main(String[] args){
         int n = 12;
