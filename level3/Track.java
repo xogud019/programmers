@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Track {
+    static int[] pointX = {-1, 0, 1, 0};
+    static int[] pointY = {0, 1, 0, -1};
     public static void main(String[] args){
         int[][] board = {{0,0,0,0,0,0,0,1},{0,0,0,0,0,0,0,0},{0,0,0,0,0,1,0,0},{0,0,0,0,1,0,0,0},{0,0,0,1,0,0,0,1},{0,0,1,0,0,0,1,0},{0,1,0,0,0,1,0,0},{1,0,0,0,0,0,0,0}};
         System.out.println(solution(board));
@@ -23,10 +25,8 @@ public class Track {
                 break;
             }
 
-            board[car.x][car.y]=1;
-
-            if(car.x>0&&board[car.x-1][car.y]==0){
-                
+            for(int i=0; i<pointX.length; i++){
+               
             }
         }
         
