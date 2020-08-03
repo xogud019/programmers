@@ -1,6 +1,6 @@
 public class Permutation {
     public static void main(String[] args){
-        char[] s = {'A','B','C','D'};
+        char[] s = {'A','B','C'};
         perm(s, 0, s.length);        
     }   
 
