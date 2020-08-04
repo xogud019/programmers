@@ -1,7 +1,7 @@
 package Hackers.Medium;
 import java.io.*;
 import java.util.*;
-
+//study
 public class AbsolutePermutation {
     static int[] absolutePermutation(int n, int k) {
         int[] answer = {};
