@@ -9,55 +9,86 @@ import java.util.regex.*;
 
 public class TheBoombermanGame {
     static String[] bomberMan(int n, String[] grid) {
-        int count = 0;
         String[][] arr= new String[grid.length][grid[0].length()];
         String[] answer= new String[grid.length];
+
         for(int i=0; i<grid.length; i++){
             answer[i] = "";
             for(int j=0; j<grid[i].length(); j++){
                 arr[i][j] = ""+grid[i].charAt(j);
             }
         }
+        if(n==1){
+            makeAnswer(arr,answer);
+            return answer;
 
-        for(int i=0; i<arr.length; i++){
-            for(int j=0; j<arr[i].length; j++){
-                System.out.print(arr[i][j]);
-            }
-            System.out.println();
         }
-        /*
-        while(count < n){
-            if(count%3==0){
-                for(int i=0; i<arr.length; i++){
-                    for(int j=0; j<arr[i].length; j++){
-                        System.out.print(arr[i][j]);
-                    }
-                    System.out.println();
-            }
-            }
-            else if(count%3==1){
-                fill(arr);
-            }
-            else if(count%3==2){
+        if(n%2==0){
+            fill(arr);
+            makeAnswer(arr,answer);
+            return answer;
+        }
+        
+        int count = 3;
 
-            }
-            count++;
+        while(count<=n){
+            bomb(arr);
+            reverse(arr);
+            count+=2;
         }
-        */
-        for(int i=0; i<arr.length; i++){
-            for(int j=0; j<arr[i].length; j++){
-                answer[i] += arr[i][j];
-            }
-        }
+        
+        makeAnswer(arr,answer);
+        
         return answer;
     }
 
     static void fill(String[][] arr){
         for(int i=0; i<arr.length; i++){
             for(int j=0; j<arr[i].length; j++){
-                if(arr[i][j].equals(".")){
+                arr[i][j] = "O";
+            }
+        }
+    }
+    ///bfs 방식으로 ㄹfor문이랑 dir배열사용해서 for문 한번더..
+    static void bomb(String[][] arr){
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[i].length; j++){
+                if(arr[i][j].equals("O")){
+                    arr[i][j] = "X";
+                    if(i>0&&!arr[i-1][j].equals("O")){
+                        arr[i-1][j] = "X";
+                    }
+                    if(i<arr.length-1&&!arr[i+1][j].equals("O")){
+                        arr[i+1][j] = "X";
+                    }
+                    if(j>0&&!arr[i][j-1].equals("O")){
+                        arr[i][j-1] = "X";
+                    }
+                    if(j<arr[i].length-1&&!arr[i][j+1].equals("O")){
+                        arr[i][j+1] = "X";
+                    }
+                }
+            }
+        }
+    }
+
+    static void reverse(String[][] arr){
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[i].length; j++){
+                if(arr[i][j].equals("X")){
+                    arr[i][j] = ".";
+                }
+                else if(arr[i][j].equals(".")){
                     arr[i][j] = "O";
                 }
+            }
+        }
+    }
+
+    static void makeAnswer(String[][] arr, String[] answer){
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[i].length; j++){
+                answer[i] += arr[i][j];
             }
         }
     }
