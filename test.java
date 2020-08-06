@@ -1,7 +1,8 @@
 public class test {
     public static void main(String[] args){
         int[][] s=  {{6,1,8},{7,5,3},{2,9,4}};
-
+        System.out.println(181054345%4);
+        /*
         rotate(s);
         rotate(s);
 
@@ -11,6 +12,7 @@ public class test {
             }
             System.out.println();
         }
+        */
     }
 
     public static void rotate(int[][] s){

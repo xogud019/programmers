@@ -1,43 +1,42 @@
 package Hackers.Medium;
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class TheBoombermanGame {
     static String[] bomberMan(int n, String[] grid) {
         String[][] arr= new String[grid.length][grid[0].length()];
         String[] answer= new String[grid.length];
-
+        
         for(int i=0; i<grid.length; i++){
             answer[i] = "";
             for(int j=0; j<grid[i].length(); j++){
                 arr[i][j] = ""+grid[i].charAt(j);
             }
         }
-        if(n==1){
-            makeAnswer(arr,answer);
-            return answer;
 
+        if(n==1){
+            makeAnswer(arr, answer);
+            return answer;
         }
+
         if(n%2==0){
             fill(arr);
-            makeAnswer(arr,answer);
+            makeAnswer(arr, answer);
+            return answer;
+        }        
+
+        if(n%4==1){
+            bomb(arr);
+            bomb(arr);
+            makeAnswer(arr, answer);
             return answer;
         }
-        
-        int count = 3;
 
-        while(count<=n){
+        if(n%4==3){
             bomb(arr);
-            reverse(arr);
-            count+=2;
+            makeAnswer(arr, answer);
+            return answer;
         }
-        
-        makeAnswer(arr,answer);
         
         return answer;
     }
@@ -49,7 +48,7 @@ public class TheBoombermanGame {
             }
         }
     }
-    ///bfs 방식으로 ㄹfor문이랑 dir배열사용해서 for문 한번더..
+
     static void bomb(String[][] arr){
         for(int i=0; i<arr.length; i++){
             for(int j=0; j<arr[i].length; j++){
@@ -70,9 +69,6 @@ public class TheBoombermanGame {
                 }
             }
         }
-    }
-
-    static void reverse(String[][] arr){
         for(int i=0; i<arr.length; i++){
             for(int j=0; j<arr[i].length; j++){
                 if(arr[i][j].equals("X")){
