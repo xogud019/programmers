@@ -1,4 +1,5 @@
-package Hackers.Easy;
+package Hackers.Easy.Implementation;
+
 import java.io.*;
 import java.util.*;
 

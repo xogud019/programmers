@@ -1,4 +1,4 @@
-package Hackers.Easy;
+package Hackers.Easy.Sort;
 import java.io.*;
 import java.math.*;
 import java.security.*;

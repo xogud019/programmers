@@ -1,4 +1,4 @@
-package Hackers.Easy;
+package Hackers.Easy.Implementation;
 import java.util.*;
 
 public class ModifiedKaprekarNum {
