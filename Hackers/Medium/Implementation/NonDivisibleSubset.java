@@ -1,4 +1,4 @@
-package Hackers.Medium;
+package Hackers.Medium.Implementation;
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;

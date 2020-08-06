@@ -1,4 +1,4 @@
-package Hackers.Medium;
+package Hackers.Medium.Implementation;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
