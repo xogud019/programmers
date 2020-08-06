@@ -1,6 +1,6 @@
 package level4;
 import java.util.*;
-
+//time limit ->using trie
 public class SearchLyrics {
     public static void main(String[] args){
         String[] words = {"frodo", "front", "frost", "frozen", "frame", "kakao"};
