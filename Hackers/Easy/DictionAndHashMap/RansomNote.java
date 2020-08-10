@@ -4,24 +4,38 @@ import java.util.*;
 public class RansomNote {
     static void checkMagazine(String[] magazine, String[] note) {
         Map<String,Integer> map =new HashMap<>();
+        Map<String,Integer> map1 =new HashMap<>();
         
         for(int i=0; i<note.length; i++){
-            map.put(note[i],1);
+            if(!map.containsKey(note[i])){
+                map.put(note[i],1);
+            }
+            else{
+                map.put(note[i], map.get(note[i])+1);
+            }
         }
 
         for(int i=0; i<magazine.length; i++){
-            if(map.containsKey(magazine[i])){
-                map.put(magazine[i],map.get(magazine[i])+1);
+            if(!map1.containsKey(magazine[i])){
+                map1.put(magazine[i],1);
+            }
+            else{
+                map1.put(magazine[i], map1.get(magazine[i])+1);
             }
         }
 
-        for(String s :map.keySet()){
-            if(map.get(s)<2){
+        for(String s : map.keySet()){
+            if(!map1.containsKey(s)){
                 System.out.println("No");
                 return;
             }
+            else{
+                if(map.get(s)>map1.get(s)){
+                    System.out.println("No");
+                    return;
+                }
+            }
         }
-
         
         System.out.println("Yes");
         return;
