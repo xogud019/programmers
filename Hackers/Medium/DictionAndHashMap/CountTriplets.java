@@ -23,6 +23,7 @@ public class CountTriplets {
             
             mid.put(start*r,mid.getOrDefault(start*r, 0L)+1);
         }
+        
         return answer;
     }
 
