@@ -7,8 +7,14 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 import java.util.Map.Entry;
-
+//using counting sort
 public class FraudulentActivityNotifications {
+    static int activityNotifications(int[] expenditure, int d) {
+        int answer = 0;
+        
+        return answer;
+    }
+    /*failed case -> time out;
     static int activityNotifications(int[] expenditure, int d) {
         int answer = 0;
         int[] arr = expenditure;
@@ -49,7 +55,7 @@ public class FraudulentActivityNotifications {
 
         return answer;
     }
-
+    */
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
