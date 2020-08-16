@@ -1,13 +1,20 @@
 package Hackers.Medium.Search;
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class IceCreamParlor {
+    static void whatFlavors(int[] cost, int money) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for(int i=0; i<cost.length; i++){
+            int now = money-cost[i];
+            if(map.containsKey(now)){
+                System.out.println(map.get(now)+" "+(i+1));
+                return;
+            }
+
+            if(!map.containsKey(cost[i])) map.put(cost[i],i+1);
+        }
+    }
     /*failed case -> time out
     static void whatFlavors(int[] cost, int money) {
         int len = cost.length;
