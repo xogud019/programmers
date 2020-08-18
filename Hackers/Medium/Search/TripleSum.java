@@ -8,6 +8,11 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class TripleSum {
+    static long triplets(int[] a, int[] b, int[] c) {
+        long answer = 0;
+
+        return answer;
+    }
     /*failed case -> duplication
     static long triplets(int[] a, int[] b, int[] c) {
         long answer = 0;
