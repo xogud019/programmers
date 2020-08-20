@@ -1,4 +1,4 @@
-package Hackers.Easy.String;
+package Hackers.Easy.Strings;
 import java.io.*;
 import java.util.Scanner;
 
