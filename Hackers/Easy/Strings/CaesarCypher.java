@@ -2,7 +2,7 @@ package Hackers.Easy.Strings;
 import java.io.*;
 import java.util.*;
 
-public class CaesarCiphe {
+public class CaesarCypher {
     static String caesarCipher(String s, int k) {
         int idx = (int)'z';
         int IDX = (int)'Z';
