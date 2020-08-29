@@ -1,33 +1,27 @@
-package Hackers.Easy.Sort;
+package Hackers.Medium.Sort;
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
 import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 //not yet
 public class CountingSort {
     static void countSort(List<List<String>> arr) {
         int n = arr.size();
-        List<String> list = new ArrayList<>();
+        StringBuffer[] count = new StringBuffer[100];
 
+        for(int i=0; i<count.length; i++) count[i] = new StringBuffer();
+        
         for(int i=0; i<arr.size(); ++i){
+            int k = Integer.parseInt(arr.get(i).get(0));
+
             if(i<n/2){
-                //System.out.println("1111");
-                arr.get(i).set(1,"-");
+                count[k] = count[k].append("- ");
             }
+            else count[k] = count[k].append(arr.get(i).get(1)+" ");
         }
 
-        
-        //Collections.sort(arr);
-
-        for(int i=0;i<arr.size(); ++i){
-            System.out.println(arr.get(i));
+        for(int i=0; i<100; i++){
+            System.out.print(count[i]);
         }
     }
 
