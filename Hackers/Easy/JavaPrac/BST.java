@@ -10,6 +10,7 @@ class Node{
     }
 }
 public class BST {
+    
     public static int getHeight(Node root){
         //Write your code here
         if(root==null){
