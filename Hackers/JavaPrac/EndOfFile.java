@@ -1,4 +1,4 @@
-package Hackers.Easy.JavaPrac;
+package Hackers.JavaPrac;
 import java.util.*;
 
 public class EndOfFile {

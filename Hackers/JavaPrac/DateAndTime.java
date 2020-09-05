@@ -1,4 +1,4 @@
-package Hackers.Easy.JavaPrac;
+package Hackers.JavaPrac;
 import java.io.*;
 import java.util.*;
 

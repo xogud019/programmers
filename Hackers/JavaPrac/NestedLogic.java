@@ -1,5 +1,4 @@
-package Hackers.Easy.JavaPrac;
-import java.io.*;
+package Hackers.JavaPrac;
 import java.util.*;
 
 public class NestedLogic {
