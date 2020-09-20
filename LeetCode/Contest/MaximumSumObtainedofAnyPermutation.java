@@ -1,6 +1,6 @@
 package LeetCode.Contest;
 import java.util.*;
-
+//not
 public class MaximumSumObtainedofAnyPermutation {
     static int module = 1000000007;
     

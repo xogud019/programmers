@@ -8,7 +8,9 @@ public class asdas {
         int[] num = new int[nums.length];
         Map<Integer, Integer> map = new HashMap<>();
         int answer= 0;
-        
+        char d = 'z';
+
+        String ss = Character.toString(d);
         for(int i=0; i<requests.length; i++){
             for(int j=requests[i][0]; j<=requests[i][1]; j++){
                 if(!map.containsKey(j)) map.put(j, 1);
