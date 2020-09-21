@@ -1,5 +1,5 @@
 package BJ.DivAndCon;
-
+//try again
 public class PrintStar {
     static char[][] arr = new char[2187][2187];
     public static void main(String[] args){
