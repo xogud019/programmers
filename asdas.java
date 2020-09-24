@@ -4,8 +4,12 @@ public class asdas {
     static int module = 1000000007;
 
     public static void main(String[] args){
-        for(int i=0; i<arr.length-1; i++){
-            for(int j)
-        }
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(0);
+
+        System.out.println(list.get(0));
+        list.remove(0);
+        System.out.println(list.get(0));
     }
 }

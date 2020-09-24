@@ -1,12 +1,11 @@
 package BJ.DS;
 
-import java.util.*;
 import java.io.*;
-
+//try again using stack
 public class Editor {
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuffer sb = new StringBuffer(br.readLine());
+        StringBuilder sb = new StringBuilder(br.readLine());
         int n = Integer.parseInt(br.readLine());
         //abcdx
         //0123
