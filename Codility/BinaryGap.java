@@ -1,10 +1,8 @@
-import java.util.*;
+package Codility;
 
-public class asdas {
-    static int module = 1000000007;
-
-    public static void main(String[] args){
-        int N = 1041;
+public class BinaryGap {
+    public int solution(int N) {
+        // write your code in Java SE 8
         int answer = 0;
         boolean isO = false;
         int count = 0;
@@ -28,6 +26,6 @@ public class asdas {
             N /=2;
         }
         
-        System.out.println(answer);
+        return answer;
     }
 }
