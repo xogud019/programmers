@@ -3,6 +3,7 @@ package LeetCode.Easy;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
 class TreeNode {
     int val;
     TreeNode left;
@@ -15,6 +16,7 @@ class TreeNode {
         this.right = right;
     }
 }
+
 public class SymmetricTree {
     /*using dfs
     public boolean isSymmetric(TreeNode root) {
