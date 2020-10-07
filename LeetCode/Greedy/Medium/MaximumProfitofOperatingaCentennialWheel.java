@@ -1,4 +1,4 @@
-package LeetCode.Contest;
+package LeetCode.Greedy.Medium;
 
 public class MaximumProfitofOperatingaCentennialWheel {
     public int minOperationsMaxProfit(int[] customers, int boardingCost, int runningCost) {
