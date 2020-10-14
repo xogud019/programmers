@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package LeetCode.DP.Easy;
 
 public class MaximumSubarray {
     public int maxSubArray(int[] nums) {
