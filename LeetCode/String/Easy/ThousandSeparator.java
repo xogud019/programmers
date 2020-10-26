@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package LeetCode.String.Easy;
 
 public class ThousandSeparator {
     public String thousandSeparator(int n) {
