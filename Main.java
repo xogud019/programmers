@@ -8,5 +8,4 @@ public class Main{
 
         System.out.println(list.contains("cc"));
     }
-    a dd b s d
 }
