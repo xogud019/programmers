@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package LeetCode.Array.Easy;
 
 public class TwoSum {
     class Solution {
