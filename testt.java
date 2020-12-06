@@ -1,3 +1,4 @@
+
 public class testt{
     public static void main(String[] args){
         String s = "baby";
@@ -5,7 +6,7 @@ public class testt{
         int sIdx = 0;
         int eIdx = 0;
         int start = 0;
-        
+
         while(sIdx < n-1){
             int max = 0;
             
