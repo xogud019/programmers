@@ -1,6 +1,19 @@
 package LeetCode.String.Easy;
 
 public class CountBinarySubstrings {
+    public int countBinarySubstrings(String s) {
+        int answer = 0, prev = 0, cur = 1;
+        for(int i=1; i<s.length(); i++){
+            if(s.charAt(i)!=s.charAt(i-1)){
+                answer += Math.min(prev, cur);
+                prev = cur;
+                cur = 1;
+            }
+            else cur++;
+        }
+        
+        return answer+Math.min(cur,prev);
+    }
     /*time out
     public int countBinarySubstrings(String s) {
         int answer = 0 , idx1 = 0, idx2 = 1;
