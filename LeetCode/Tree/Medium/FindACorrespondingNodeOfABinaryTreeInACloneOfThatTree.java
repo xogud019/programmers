@@ -37,6 +37,17 @@ Constraints:
 2.The values of the nodes of the tree are unique.
 3.target node is a node from the original tree and is not null.
 */
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
 
 public class FindACorrespondingNodeOfABinaryTreeInACloneOfThatTree {
     class Solution {
@@ -55,12 +66,5 @@ public class FindACorrespondingNodeOfABinaryTreeInACloneOfThatTree {
                 inOrder(node1.right, node2.right);
             }
         }
-    }
-
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
     }
 }
