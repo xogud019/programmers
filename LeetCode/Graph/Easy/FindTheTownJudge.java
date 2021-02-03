@@ -1,4 +1,4 @@
-package LeetCode.Array.Easy;
+package LeetCode.Graph.Easy;
 
 public class FindTheTownJudge {
     public int findJudge(int N, int[][] trust) {
