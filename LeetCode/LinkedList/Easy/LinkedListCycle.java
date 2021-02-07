@@ -41,6 +41,24 @@ pos is -1 or a valid index in the linked-list.
 Follow up: Can you solve it using O(1) (i.e. constant) memory?
 */
 public class LinkedListCycle {
+    /*Floyd's Cycle Finding Algorithm
+    public boolean hasCycle(ListNode head) {
+        if (head == null) {
+            return false;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+    */
     public boolean hasCycle(ListNode head) {
         HashSet<ListNode> set = new HashSet<>();
         
