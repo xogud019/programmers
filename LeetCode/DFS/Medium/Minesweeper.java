@@ -1,4 +1,4 @@
-package LeetCode.DFS.Easy;
+package LeetCode.DFS.Medium;
 /*
 Let's play the minesweeper game (Wikipedia, online game)!
 
