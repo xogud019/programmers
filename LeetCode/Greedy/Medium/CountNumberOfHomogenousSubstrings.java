@@ -1,4 +1,8 @@
-package LeetCode.Contest;
+package LeetCode.Greedy.Medium;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 Given a string s, return the number of homogenous substrings of s. Since the answer may be too large, return it modulo 109 + 7.
 
@@ -80,12 +84,39 @@ public class CountNumberOfHomogenousSubstrings {
         
         list.add(s.substring(idx, len));
         
+        //this way can`t mod -> nope, think overflow using long
         for(String ss:list){
-            answer += ((ss.length()*(ss.length()+1)%mod)/2);
+            int n = ss.length();
+            
+            answer += (((n) % 1000000007) * ((n + 1) % 1000000007) / 2) % 1000000007;
         }
         
         
         return answer;
     }
     */
+    static final int mod = 1000000007;
+    
+    public int countHomogenous(String s) {
+        int answer = 0, len = s.length(), idx = 0;
+        List<String> list = new ArrayList<>();
+        
+        for(int i=1; i<len; i++){
+            if(s.charAt(idx) != s.charAt(i)){
+                list.add(s.substring(idx,i));
+                idx = i;
+            }
+        }
+        
+        list.add(s.substring(idx, len));
+        
+        for(String ss:list){
+            long n = ss.length();
+            
+            answer += (int)((((n) % 1000000007) * ((n + 1) % 1000000007) / 2) % 1000000007);
+        }
+        
+        
+        return answer;
+    }
 }

@@ -1,4 +1,4 @@
-package LeetCode.Contest;
+package LeetCode.Greedy.Easy;
 /*
 You are given a string s consisting only of the characters '0' and '1'. In one operation, you can change any '0' to '1' or vice versa.
 
@@ -31,6 +31,7 @@ Constraints:
 s[i] is either '0' or '1'.
 */
 public class MinimumChangesToMakeAlternatingBinaryString {
+    /*16ms
     public int minOperations(String s) {
         int ans1 = 0, ans2 = 0;
         char case1 = '0', case2 = '1';
@@ -52,5 +53,32 @@ public class MinimumChangesToMakeAlternatingBinaryString {
     
     public char flip(char c){
         return c == '0' ? '1':'0';
+    }
+    */
+
+    //4ms
+    public int minOperations(String s) {
+        int answer1 = 0, answer2 = 0;
+        char c1 = '0', c2 = '1';
+        
+        for(int i=0; i<s.length(); i++){
+            if(i%2 == 0){
+                if(s.charAt(i) != c1) answer1++;
+            }
+            else{
+                if(s.charAt(i) != c2) answer1++;
+            }
+        }
+        
+        for(int i=0; i<s.length(); i++){
+            if(i%2 == 0){
+                if(s.charAt(i) != c2) answer2++;
+            }
+            else{
+                if(s.charAt(i) != c1) answer2++;
+            }
+        }
+        
+        return Math.min(answer1, answer2);
     }
 }
