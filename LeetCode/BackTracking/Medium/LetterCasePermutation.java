@@ -62,4 +62,68 @@ public class LetterCasePermutation {
         
         return Character.toLowerCase(c);
     }
+
+    /*time out
+    List<String> answer;
+    
+    public List<String> letterCasePermutation(String S) {
+        answer = new ArrayList<>();    
+        
+        dfs(S, S.toCharArray(), 0);
+        
+        return answer;
+    }
+    
+    public void dfs(String s, char[] arr, int idx){
+        if(!answer.contains(new String(arr))) answer.add(new String(arr));
+        
+        for(int i=idx; i<s.length(); i++){
+            char temp = arr[i];
+            
+            if(!Character.isDigit(temp)){
+                if(Character.isLowerCase(temp)){
+                    arr[i] = Character.toUpperCase(temp);
+                    dfs(s, arr, idx+1);
+                    arr[i] = temp;
+                }
+                else{
+                    arr[i] = Character.toLowerCase(temp);
+                    dfs(s, arr, idx+1);
+                    arr[i] = temp;
+                }
+            }
+        }
+    }
+    */
+    /*
+    List<String> answer;
+    
+    public List<String> letterCasePermutation(String S) {
+        answer = new ArrayList<>();    
+        
+        dfs(S, S.toCharArray(), 0);
+        
+        return answer;
+    }
+    
+    public void dfs(String s, char[] arr, int idx){
+        if(!answer.contains(new String(arr))) answer.add(new String(arr));
+        
+        for(int i=idx; i<s.length(); i++){
+            char temp = arr[i];
+            
+            if(!Character.isDigit(temp)){
+                arr[i] = converse(temp);
+                dfs(s, arr, i+1);
+                arr[i] = temp;
+            }
+        }
+    }
+    
+    public Character converse(char c){
+        if(Character.isLowerCase(c)) return Character.toUpperCase(c);
+        
+        return Character.toLowerCase(c);
+    }
+    */
 }
