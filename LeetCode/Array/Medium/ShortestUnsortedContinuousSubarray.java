@@ -58,4 +58,26 @@ public class ShortestUnsortedContinuousSubarray {
         
         return end - start +1;
     }
+
+    /*using stack O(n)
+    public int findUnsortedSubarray(int[] nums) {
+        Stack<Integer> stk = new Stack<>();
+        int len = nums.length;
+        int left = len, right = 0;
+        
+        for(int i=0; i<len; i++){
+            while(!stk.isEmpty() && nums[stk.peek()] > nums[i]) left = Math.min(left, stk.pop());
+            stk.push(i);
+        }
+        
+        stk.clear();
+        
+        for(int i=len-1; i>=0; i--){
+            while(!stk.isEmpty() && nums[stk.peek()] < nums[i]) right = Math.max(right, stk.pop());
+            stk.push(i);
+        }
+        
+        return right - left > 0 ? right - left + 1 : 0;
+    }
+    */
 }
