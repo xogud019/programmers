@@ -59,6 +59,21 @@ public class LinkedListCycle {
         return true;
     }
     */
+    /*floyd cycle algo
+    public boolean hasCycle(ListNode head) {
+        if(head == null || head.next == null) return false;
+        ListNode prev = head, next = head.next;
+    
+        while(next.next != null && next.next.next != null){
+            prev = prev.next;
+            next = next.next.next;
+            
+            if(prev == next) return true;
+        }
+        
+        return false;
+    }
+    */
     public boolean hasCycle(ListNode head) {
         HashSet<ListNode> set = new HashSet<>();
         

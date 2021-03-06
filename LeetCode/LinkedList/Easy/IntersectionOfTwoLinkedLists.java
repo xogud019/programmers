@@ -70,4 +70,37 @@ public class IntersectionOfTwoLinkedLists {
         
         return null;
     }
+    /*
+    //ex A = 4 1 8 4 5, B = 5 6 1 8 4 5
+    //in while A = 4 1 8 4 5 + 5 6 1 8 4 5
+    //in while B = 5 6 1 8 4 5 + 4 1 8 4 5
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode tempA = headA, tempB = headB;
+        
+        if(headA == null || headB == null) return null;
+        
+        boolean aliasA = false, aliasB = false;
+        
+        while(tempA != tempB){
+            if(tempA.next == null){
+                if(aliasA) return null;
+                
+                tempA = headB;
+                aliasA = true;
+            }
+            else tempA  = tempA.next;
+            
+            if(tempB.next == null){
+                if(aliasB) return null;
+                
+                tempB = headA;
+                aliasB = true;
+            }
+            else tempB = tempB.next;
+        }
+        
+        return tempA;
+    }
+    */
 }
+

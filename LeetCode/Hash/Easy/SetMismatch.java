@@ -32,4 +32,19 @@ public class SetMismatch {
         
         return answer;
     }
+    /*
+    public int[] findErrorNums(int[] nums) {
+        int[] answer = new int[2];
+        int[] arr = new int[nums.length+1];
+        
+        for(int i:nums) arr[i]++;
+        
+        for(int i=1; i<arr.length; i++){
+            if(arr[i] == 0) answer[1] = i;
+            
+            if(arr[i] == 2) answer[0] = i;
+        }
+        return answer;
+    }
+    */
 }
