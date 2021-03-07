@@ -1,7 +1,6 @@
 package LeetCode.Trie.Medium;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /*
 A valid encoding of an array of words is any reference string s and array of indices indices such that:
@@ -36,6 +35,46 @@ Constraints:
 words[i] consists of only lowercase letters.
 */
 public class ShortEncodingOfWords {
+    class TrieNode{
+        TrieNode[] children;
+        boolean hasChild;
+        
+        public TrieNode(){
+            children = new TrieNode[26];
+            hasChild = false;
+        }
+        
+        public TrieNode get(char c){
+            if(children[c-'a'] == null){
+                children[c-'a'] = new TrieNode();
+                hasChild = true;
+            }
+            
+            return children[c-'a'];
+        }
+    }
+    
+    public int minimumLengthEncoding(String[] words) {
+        TrieNode root = new TrieNode();
+        HashMap<TrieNode, Integer> map = new HashMap<>();
+        int idx = 0, answer = 0;
+        
+        for(String word:words){
+            TrieNode cur = root;
+            
+            for(int i = word.length()-1; i>=0; --i){
+                cur = cur.get(word.charAt(i));    
+            }
+            
+            map.put(cur, idx++);
+        }
+        
+        for(TrieNode node:map.keySet()){
+            if(!node.hasChild) answer += words[map.get(node)].length()+1;
+        }
+        
+        return answer;
+    }
     /*using set and prefix
     public int minimumLengthEncoding(String[] words) {
         Set<String> set = new HashSet<>();
@@ -54,6 +93,7 @@ public class ShortEncodingOfWords {
         return answer;
     }
     */
+    /*
     public int minimumLengthEncoding(String[] words) {
         TrieNode trie = new TrieNode();
         Map<TrieNode, Integer> nodes = new HashMap<>();
@@ -74,8 +114,9 @@ public class ShortEncodingOfWords {
         return ans;
 
     }
+    */
 }
-
+/*
 class TrieNode {
     TrieNode[] children;
     int count;
@@ -91,7 +132,7 @@ class TrieNode {
         return children[c - 'a'];
     }
 }
-
+*/
 /*abstract
 public int minimumLengthEncoding(String[] words) {
 		Node trie = new Node();
