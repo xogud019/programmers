@@ -58,4 +58,32 @@ public class BinaryTreesWithFactors {
         
         return (int)(answer%MOD);
     }
+    /*
+    public int numFactoredBinaryTrees(int[] arr) {
+        long answer = 0;
+        Map<Integer, Long> map = new HashMap<>();
+        int len = arr.length;
+        Arrays.sort(arr);
+        
+        for(int i=0; i<len; i++){
+            long count = 1;
+            
+            for(int j=0; j<i; j++){
+                if(arr[i]%arr[j] == 0){
+                    int rightNode = arr[i]/arr[j];
+                    
+                    if(map.containsKey(rightNode)){
+                        count += (map.get(arr[j])*map.get(rightNode));
+                    }
+                }
+            }
+            
+            map.put(arr[i],count);
+        }
+        
+        for(int i:map.keySet()) answer += map.get(i);
+        
+        return (int)(answer%mod);
+    }
+    */
 }
