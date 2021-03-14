@@ -1,4 +1,7 @@
 package LeetCode.LinkedList.Medium;
+
+import java.util.ArrayList;
+
 /*
 You are given the head of a linked list, and an integer k.
 Return the head of the linked list after swapping the values of the kth node from the beginning and the kth node from the end (the list is 1-indexed).
@@ -42,6 +45,40 @@ class ListNode {
 }
 
 public class SwappingNodesInALinkedList {
+    //9ms 54.7m using list
+    public ListNode swapNodes(ListNode head, int k) {
+        ListNode temp = head;
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        //check length
+        while(temp != null){
+            list.add(temp.val);
+            temp = temp.next;
+        }
+        
+        int len = list.size();
+        
+        //return case
+        if(len == 1 && k ==1) return head;
+        
+        //swap
+        int num = list.get(k-1);
+        list.set(k-1, list.get(len-k));
+        list.set(len-k, num);
+        
+        ListNode point = new ListNode();
+        ListNode answer = new ListNode(list.get(0));
+        point.next = answer;
+        int idx = 1;
+        
+        while(idx < len){
+            answer.next = new ListNode(list.get(idx++));
+            answer = answer.next;
+        }
+        
+        return point.next;
+    }
+    /*4m 190m using listnode
     public ListNode swapNodes(ListNode head, int k) {
         ListNode front = head, back = null;
         int len = 0;
@@ -73,4 +110,47 @@ public class SwappingNodesInALinkedList {
         
         return head;
     }
+    */
+    /*8m 55m using array
+    public ListNode swapNodes(ListNode head, int k) {
+        ListNode temp = head;
+        int len = 0;
+        
+        //check length
+        while(temp != null){
+            len++;
+            temp = temp.next;
+        }
+        
+        //return case
+        if(len == 1 && k ==1) return head;
+        
+        int[] arr = new int[len];
+        
+        temp = head;
+        int idx = 0;
+        //make val arr
+        while(temp != null){
+            arr[idx++] = temp.val;
+            temp = temp.next;
+        }
+        
+        //swap
+        int num = arr[k-1];
+        arr[k-1] = arr[len-k];
+        arr[len-k] = num;
+        
+        ListNode point = new ListNode();
+        ListNode answer = new ListNode(arr[0]);
+        point.next = answer;
+        idx = 1;
+        
+        while(idx < len){
+            answer.next = new ListNode(arr[idx++]);
+            answer = answer.next;
+        }
+        
+        return point.next;
+    }
+    */
 }
