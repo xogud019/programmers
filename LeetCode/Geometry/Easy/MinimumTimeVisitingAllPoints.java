@@ -1,4 +1,4 @@
-package LeetCode.Array.Easy;
+package LeetCode.Geometry.Easy;
 
 public class MinimumTimeVisitingAllPoints {
     public int minTimeToVisitAllPoints(int[][] points) {
