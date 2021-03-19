@@ -59,4 +59,30 @@ public class KeysAndRooms {
         
         return true;
     }
+
+    /*
+    boolean[] visited;
+    
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        visited = new boolean[rooms.size()];
+        visited[0] = true;
+        
+        dfs(rooms, visited, 0);
+        
+        for(boolean b : visited){
+            if(!b) return false;
+        }
+        
+        return true;
+    }
+    
+    public void dfs(List<List<Integer>> rooms, boolean[] visited, int idx){
+        for(int i : rooms.get(idx)){
+            if(!visited[i]){
+                visited[i] = true;
+                dfs(rooms, visited, i);
+            }
+        }
+    }
+    */
 }
