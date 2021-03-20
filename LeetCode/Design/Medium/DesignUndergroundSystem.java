@@ -158,3 +158,62 @@ public class DesignUndergroundSystem {
         }
     }
 }
+/*
+class UndergroundSystem {
+    class Time{
+        int sum = 0;
+        int count = 0;
+        
+        public Time(int sum, int count){
+            this.sum += sum;
+            this.count += count;
+        }
+        
+        public void add(int sum){
+            this.sum += sum;
+            this.count++;
+        }
+        
+        public double getAvg(){
+            return (double)sum/count;
+        }
+    }
+    
+    HashMap<Integer, String> station;
+    HashMap<Integer, Integer> time;
+    HashMap<String, Time> total;
+    
+    public UndergroundSystem() {
+        station = new HashMap<>();
+        time = new HashMap<>();
+        total = new HashMap<>();
+    }
+    
+    public void checkIn(int id, String stationName, int t) {
+        station.put(id, stationName);
+        time.put(id, t*(-1));
+    }
+    
+    public void checkOut(int id, String stationName, int t) {
+        String route = station.get(id)+"@"+stationName;
+        station.put(id, route);
+        time.put(id, time.get(id)+t);
+        
+        if(total.containsKey(route)){
+            Time tt = total.get(route);
+            
+            tt.add(time.get(id));
+            
+            total.put(route, tt);
+        }
+        else total.put(route, new Time(time.get(id),1));
+    }
+    
+    public double getAverageTime(String startStation, String endStation) {
+        String key = startStation+"@"+endStation;
+        
+        return total.get(key).getAvg();
+        
+    }
+}
+*/
