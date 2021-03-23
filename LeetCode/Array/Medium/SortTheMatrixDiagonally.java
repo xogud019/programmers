@@ -79,4 +79,80 @@ public class SortTheMatrixDiagonally {
         return arr;
     }
     */
+
+    /*
+    public int[][] diagonalSort(int[][] mat) {
+        int startRow = 0;
+        int startCol = 0;
+        while (startRow < mat.length) {
+            int i = startRow;
+            int j = startCol;
+            int elements = Math.min(mat[0].length - startCol, mat.length - startRow);
+            int[] cur = new int[elements];
+            int k = 0;
+            while (i < mat.length && j < mat[0].length) {
+                cur[k++] = (mat[i++][j++]);
+            }
+            Arrays.sort(cur);
+            i = startRow;
+            j = startCol;
+             k = 0;
+             while (i < mat.length && j < mat[0].length) {
+                mat[i++][j++] = cur[k++];
+            }
+            startCol++;
+            if (startCol == mat[0].length) {
+                startRow++;
+                startCol = 0;
+            }
+        }
+        return mat;
+    }
+    */
+    /*
+    public int[][] diagonalSort(int[][] mat) {
+        if (mat == null || mat.length == 0 || mat[0].length == 0) {
+            return mat;
+        }
+        int rows = mat.length;
+        int cols = mat[0].length;
+        
+        for (int c = 0; c < cols; c++) {
+            sortDiagonal(mat, 0, c);
+        }
+        
+        for (int r = 1; r < rows; r++) {
+            sortDiagonal(mat, r, 0);
+        }
+        return mat;
+    }
+    
+    private void sortDiagonal(int[][] mat, int r, int c) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int dLen = Math.min(rows - r, cols - c);
+        for (int i = 0; i < dLen; i++) {
+            int v = mat[r + i][c + i];
+            min = Math.min(min, v);
+            max = Math.max(max, v);
+        }
+        
+        int[] counts = new int[max - min + 1];
+        for (int i = 0; i < dLen; i++) {
+            int v = mat[r + i][c + i];
+            counts[v - min]++;
+        }
+        
+        int ind = 0;
+        for (int i = 0; i < dLen; i++) {
+            while (ind < counts.length && counts[ind] == 0) {
+                ind++;
+            }
+            mat[r + i][c + i] = min + ind;
+            counts[ind]--;
+        }
+    }
+    */
 }
