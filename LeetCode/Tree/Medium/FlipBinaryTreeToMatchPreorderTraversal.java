@@ -1,4 +1,8 @@
 package LeetCode.Tree.Medium;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 You are given the root of a binary tree with n nodes, where each node is uniquely assigned a value from 1 to n. You are also given a sequence of n values voyage, which is the desired pre-order traversal of the binary tree.
 
@@ -41,6 +45,52 @@ All the values in the tree are unique.
 All the values in voyage are unique.
 */
 public class FlipBinaryTreeToMatchPreorderTraversal {
+    int idx;
+    int[] arr;
+    List<Integer> answer;
+    
+    public List<Integer> flipMatchVoyage(TreeNode root, int[] voyage) {
+        idx = 0;
+        arr = voyage;
+        answer = new ArrayList<>();
+        boolean canFlip = dfs(root);
+        
+        if(!canFlip){
+            answer = new ArrayList<>();
+            answer.add(-1);
+            return answer;
+        }
+        
+        return answer;
+    }
+    
+    public boolean dfs(TreeNode root){
+        if(root == null) return true;;
+        
+        if(root.val == arr[idx]){
+            idx++;
+            int ptr = idx;
+            
+            boolean left = dfs(root.left);
+            boolean right = dfs(root.right);
+            
+            if(left&&right) return true;
+            
+            idx = ptr;
+            flip(root);
+            answer.add(root.val);
+            
+            return dfs(root.left)&&dfs(root.right);
+        }
+        
+        return false;
+    }
+    
+    public void flip(TreeNode root){
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+    }
     /*failed case
     public List<Integer> flipMatchVoyage(TreeNode root, int[] voyage) {
         List<Integer> list = new ArrayList<>();
