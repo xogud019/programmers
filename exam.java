@@ -4,14 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class exam {
-    static class Man{
-        int in =0 ;
-        int count = -1;
-
-        public Man(int in){
-            this.in = in;
-        }
-    }
     public static void main(String[] args){
         int[][] enter = {{1,3,2},{1,4,2,3},{3,2,1},{3,2,1},{1,4,2,3}}, leave = {{1,2,3},{2,1,3,4},{2,1,3},{1,3,2},{2,1,4,3}};
        
@@ -26,7 +18,7 @@ public class exam {
         int[] answer  = new int[len];
         Queue<Integer> out = new LinkedList<>();
         List<Integer> in = new LinkedList<>();
-        
+
         Arrays.fill(answer, -1);
 
         for(int i:leave) out.add(i);
