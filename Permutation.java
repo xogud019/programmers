@@ -1,7 +1,7 @@
 public class Permutation {
     static int count = 0;
     public static void main(String[] args){
-        char[] s = {'A','B','C','B'};
+        char[] s = {'A','B','C'};
         perm(s, 0, 3);        
     }   
 
