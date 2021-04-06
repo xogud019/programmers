@@ -23,15 +23,27 @@ Constraints:
 */
 public class MinimumOperationsToMakeArrayEqual {
     public int minOperations(int n) {
+        if(n == 1) return 0;
+        
+        int answer = 0;
+        
+        for(int i=0; i<n/2; i++) answer += n - ((2*i)+1);
+        
+        return answer;
+    }
+    /*
+    public int minOperations(int n) {
         int base = 0, answer = 0;
         
         if(n%2 == 0) base = 2*(n/2);    
         else base = 2*(n/2)+1;
         //1 3 5 7 9 11
+        //1 3 5 7 9
         
         //System.out.println(base);
         for(int i=0; i<n/2; i++) answer += (base - ((2*i)+1));
         
         return answer;
     }
+    */
 }
