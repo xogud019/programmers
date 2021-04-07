@@ -36,6 +36,19 @@ Constraints:
 3.s consists of uppercase and lowercase letters.
 */
 public class DetermineIfStringHalvesAreAlike {
+    /*
+    public boolean halvesAreAlike(String s) {
+        int len = s.length()/2, l = 0, r = 0;
+        String vowel = "aeiouAEIOU";
+        
+        for(int i=0; i<len; i++){
+            if(vowel.contains(""+s.charAt(i))) l++;
+            if(vowel.contains(""+s.charAt(len+i))) r++;
+        }
+        
+        return l==r;
+    }
+    */
     public boolean halvesAreAlike(String s) {
         int len = s.length();
         String s1 = s.substring(0,len/2);
