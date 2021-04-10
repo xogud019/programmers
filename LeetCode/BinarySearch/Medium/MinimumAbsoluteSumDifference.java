@@ -1,4 +1,7 @@
 package LeetCode.BinarySearch.Medium;
+
+import java.util.Arrays;
+
 /*
 You are given two positive integer arrays nums1 and nums2, both of length n.
 
@@ -44,6 +47,38 @@ n == nums2.length
 1 <= nums1[i], nums2[i] <= 105
 */
 public class MinimumAbsoluteSumDifference {
+    final static int mod = 1000000007;
+    
+    public int minAbsoluteSumDiff(int[] nums1, int[] nums2) {
+        if(Arrays.equals(nums1, nums2)) return 0;
+        int len = nums1.length;
+        long sum = 0;
+        
+        for(int i=0; i<len; i++) sum += Math.abs(nums1[i]-nums2[i]);
+            
+        int[] sortArr = nums1.clone();
+        Arrays.sort(sortArr);
+        
+        int max = 0;
+        
+        for(int i=0; i<len; i++){
+            if(nums1[i] == nums2[i]) continue;
+            
+            int diff = Math.abs(nums1[i] - nums2[i]);
+            int idx = Arrays.binarySearch(sortArr, nums2[i]);
+            
+            if(idx >= 0) max = Math.max(max, diff);
+            else{
+                int newIdx = (idx+1)*(-1);
+                
+                if(newIdx > 0) max = Math.max(max, diff - Math.abs(sortArr[newIdx-1]-nums2[i]));
+                if(newIdx < len) max = Math.max(max, diff - Math.abs(sortArr[newIdx]-nums2[i]));
+            }
+        }
+        //System.out.println(sum+" "+max);
+        
+        return (int)((sum-max)%mod);
+    }
     /*failed case
     final static int mod = 1000000007;
     
