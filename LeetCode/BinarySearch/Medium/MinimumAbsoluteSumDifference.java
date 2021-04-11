@@ -52,6 +52,8 @@ public class MinimumAbsoluteSumDifference {
     
     public int minAbsoluteSumDiff(int[] nums1, int[] nums2) {
         int len = nums1.length;
+        long sum = 0;
+        
         for(int i=0; i<len; i++) sum += Math.abs(nums1[i]-nums2[i]);
             
         int[] sortArr = nums1.clone();
