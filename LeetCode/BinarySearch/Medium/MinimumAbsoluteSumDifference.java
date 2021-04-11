@@ -1,4 +1,7 @@
 package LeetCode.BinarySearch.Medium;
+
+import java.util.Arrays;
+
 /*
 You are given two positive integer arrays nums1 and nums2, both of length n.
 
@@ -44,46 +47,36 @@ n == nums2.length
 1 <= nums1[i], nums2[i] <= 105
 */
 public class MinimumAbsoluteSumDifference {
-    /*temp
+
     final static int mod = 1000000007;
     
     public int minAbsoluteSumDiff(int[] nums1, int[] nums2) {
-        if(Arrays.equals(nums1, nums2)) return 0;
         int len = nums1.length;
-        long sum = 0;
-        long min = Integer.MAX_VALUE;
-        int answer = 0;
+        for(int i=0; i<len; i++) sum += Math.abs(nums1[i]-nums2[i]);
+            
+        int[] sortArr = nums1.clone();
+        Arrays.sort(sortArr);
         
-        for(int i=0; i<len; i++) sum += Math.abs(nums1[i]-nums2[i]);        
-        
-        int[] temp = nums1.clone();
-        
-        Arrays.sort(temp);
+        int max = 0;
         
         for(int i=0; i<len; i++){
-            long n = sum - Math.abs(nums1[i]-nums2[i]);
+            if(nums1[i] == nums2[i]) continue;
             
-            int lo = 0, hi = len-1;
+            int diff = Math.abs(nums1[i] - nums2[i]);
+            int idx = Arrays.binarySearch(sortArr, nums2[i]);
             
-            while(lo < hi){
-                int mid = lo+(hi-lo)/2;
-                int dif = Math.abs(temp[mid] - nums2[i]);
+            if(idx >= 0) max = Math.max(max, diff);
+            else{
+                int newIdx = (idx+1)*(-1);
                 
-                if(){
-                    
-                }
-                else if(){
-                    
-                }
-                else{
-                    break;
-                }
+                if(newIdx > 0) max = Math.max(max, diff - Math.abs(sortArr[newIdx-1]-nums2[i]));
+                if(newIdx < len) max = Math.max(max, diff - Math.abs(sortArr[newIdx]-nums2[i]));
             }
         }
-                
-        return answer;
+        //System.out.println(sum+" "+max);
+        
+        return (int)((sum-max)%mod);
     }
-    */
     /*failed case
     final static int mod = 1000000007;
     
