@@ -44,6 +44,46 @@ n == nums2.length
 1 <= nums1[i], nums2[i] <= 105
 */
 public class MinimumAbsoluteSumDifference {
+    /*temp
+    final static int mod = 1000000007;
+    
+    public int minAbsoluteSumDiff(int[] nums1, int[] nums2) {
+        if(Arrays.equals(nums1, nums2)) return 0;
+        int len = nums1.length;
+        long sum = 0;
+        long min = Integer.MAX_VALUE;
+        int answer = 0;
+        
+        for(int i=0; i<len; i++) sum += Math.abs(nums1[i]-nums2[i]);        
+        
+        int[] temp = nums1.clone();
+        
+        Arrays.sort(temp);
+        
+        for(int i=0; i<len; i++){
+            long n = sum - Math.abs(nums1[i]-nums2[i]);
+            
+            int lo = 0, hi = len-1;
+            
+            while(lo < hi){
+                int mid = lo+(hi-lo)/2;
+                int dif = Math.abs(temp[mid] - nums2[i]);
+                
+                if(){
+                    
+                }
+                else if(){
+                    
+                }
+                else{
+                    break;
+                }
+            }
+        }
+                
+        return answer;
+    }
+    */
     /*failed case
     final static int mod = 1000000007;
     
