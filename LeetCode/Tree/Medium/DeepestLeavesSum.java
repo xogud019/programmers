@@ -14,6 +14,37 @@ Constraints:
 2.The value of nodes is between 1 and 100.
 */
 public class DeepestLeavesSum {
+    /*1ms
+    HashMap<Integer,Integer> map;
+    
+    public int deepestLeavesSum(TreeNode root) {
+        map = new HashMap<>();
+        dfs(root, 0);
+        
+        int max = 0, answer = 0;
+        
+        for(int i:map.keySet()){
+            if(i > max){
+                max = i;
+                answer = map.get(max);
+            }
+        }
+        
+        return answer;
+    }
+    
+    public void dfs(TreeNode root, int depth){
+        if(root == null) return;
+        
+        if(root.left != null) dfs(root.left, depth+1);
+        if(root.right != null) dfs(root.right, depth+1);
+        
+        if(root.left == null && root.right == null) map.put(depth, map.getOrDefault(depth, 0) + root.val);
+        
+        return;
+    }
+    */
+    //3ms
     class Solution {
         HashMap<Integer, Integer> map;
         
