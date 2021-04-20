@@ -19,6 +19,7 @@ class Node {
 }
 
 public class NaryTreePreorderTraversal {
+    //recursive
     public List<Integer> preorder(Node root) {
         List<Integer> answer = new ArrayList<>();
         
@@ -36,4 +37,25 @@ public class NaryTreePreorderTraversal {
             }
         }
     }
+
+    /*iterative
+    public List<Integer> preorder(Node root) {
+        List<Integer> answer = new ArrayList<>();
+        
+        if(root == null) return answer;
+        
+        Stack<Node> stk = new Stack<>();
+        stk.push(root);
+        
+        while(!stk.isEmpty()){
+            Node node = stk.pop();
+            
+            answer.add(node.val);
+            
+            for(int i=node.children.size()-1; i>=0; i--) stk.push(node.children.get(i));
+        }
+        
+        return answer;
+    }
+    */
 }
