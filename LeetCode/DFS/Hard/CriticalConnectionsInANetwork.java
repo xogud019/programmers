@@ -25,7 +25,7 @@ connections[i][0] != connections[i][1]
 There are no repeated connections.
 */
 public class CriticalConnectionsInANetwork {
-    /*copy coding
+    /*copy coding  - targan algorithm
     List<List<Integer>> answer;
     List<Integer>[] graph;
     int[] dsnt, dsn;
