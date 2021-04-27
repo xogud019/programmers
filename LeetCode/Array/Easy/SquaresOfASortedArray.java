@@ -66,4 +66,20 @@ public class SquaresOfASortedArray {
         return answer;
     }
     */
+
+    /*
+    public int[] sortedSquares(int[] nums) {
+        int len = nums.length;
+        int lo = 0, hi = len-1, idx = len-1;
+        
+        int[] answer = new int[len];
+        
+        while(lo <= hi){
+            if(Math.abs(nums[lo]) >= Math.abs(nums[hi])) answer[idx--] = nums[lo]*nums[lo++];
+            else answer[idx--] = nums[hi]*nums[hi--];
+        }
+        
+        return answer;
+    }
+    */
 }
