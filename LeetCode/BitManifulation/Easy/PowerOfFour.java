@@ -39,4 +39,19 @@ public class PowerOfFour {
         
         return true;
     }   
+
+    /*math
+    public boolean isPowerOfFour(int n) {
+        return (Math.log10(n)/Math.log10(4)%1 ==0);
+    }
+    */
+
+    /*bit
+    public boolean isPowerOfFour(int n) {
+        if(n<=0) return false;
+        if((n&(n-1))!=0) return false;
+        
+        return (n-1)%3==0;
+    }
+    */
 }

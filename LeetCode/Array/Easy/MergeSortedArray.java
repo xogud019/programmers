@@ -50,4 +50,25 @@ public class MergeSortedArray {
             nums1[x] = arr[x];
         }
     }
+    /*no another space
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int idx = 0, jdx = 0;
+        
+        while(idx < m && jdx < n && m < nums1.length){
+            if(nums2[jdx] >= nums1[idx]){
+                idx++;
+            }
+            else{
+                for(int i=m; i>idx; i--) nums1[i] = nums1[i-1];
+                
+                nums1[idx++] = nums2[jdx++];
+                m++;
+            }
+        }
+        
+        if(jdx < n){
+            for(int i=jdx; i<n; i++) nums1[idx++] = nums2[i];
+        }
+    }
+    */
 }
