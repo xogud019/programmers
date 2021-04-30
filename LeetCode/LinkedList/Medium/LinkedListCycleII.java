@@ -61,4 +61,36 @@ public class LinkedListCycleII {
         
         return head;
     }
+
+    /*floyd
+    public ListNode detectCycle(ListNode head) {
+        if(head == null || head.next == null) return null;
+        ListNode prev = head, cur = head;
+        boolean loop = false;
+        
+        while(cur.next != null && cur.next.next != null){
+            prev = prev.next;
+            cur = cur.next.next;
+            
+            if(prev == cur){
+                loop = true;
+                break;
+            }
+        }
+        
+        if(loop){
+            prev = head;
+            
+            while(prev != cur){
+                prev = prev.next;
+                cur = cur.next;
+            }
+            
+            return prev;
+        }
+        
+        
+        return null;
+    }
+    */
 }

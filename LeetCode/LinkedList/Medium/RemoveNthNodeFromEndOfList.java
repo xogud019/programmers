@@ -72,4 +72,30 @@ public class RemoveNthNodeFromEndOfList {
         
         return answer.next;
     }
+
+    /*using twopointer
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head == null || head.next == null) return null;
+        ListNode answer = new ListNode();
+        answer.next = head;
+        
+        ListNode prev = answer, cur = answer;
+        int cnt = 0;
+        
+        while(cnt <= n){
+            cur = cur.next;
+            cnt++;
+        }
+        
+        while(cur != null){
+            cur = cur.next;
+            prev = prev.next;
+        }
+        
+        prev.next = prev.next.next;
+        //System.out.println(prev.val+" "+cur.val);
+        
+        return answer.next;
+    }
+    */
 }

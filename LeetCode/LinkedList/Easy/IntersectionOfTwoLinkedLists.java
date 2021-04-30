@@ -72,8 +72,8 @@ public class IntersectionOfTwoLinkedLists {
     }
     /*
     //ex A = 4 1 8 4 5, B = 5 6 1 8 4 5
-    //in while A = 4 1 8 4 5 + 5 6 1 8 4 5
-    //in while B = 5 6 1 8 4 5 + 4 1 8 4 5
+    //in while A = 4 1 8 4 5 + 5 6 1 8 4 5 + 4 1 8 4 5
+    //in while B = 5 6 1 8 4 5 + 4 1 8 4 5 + 5 6 1 8 4 5
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode tempA = headA, tempB = headB;
         
@@ -100,6 +100,35 @@ public class IntersectionOfTwoLinkedLists {
         }
         
         return tempA;
+    }
+    */
+
+    /*
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null) return null;
+        
+        ListNode a = headA, b = headB;
+        boolean aliasA = false, aliasB = false;
+        
+        while(a != b){
+            if(a == null){
+                if(aliasA) return null;
+                
+                a = headB;
+                aliasA = true;
+            }
+            else a = a.next;
+            
+            if(b == null){
+                if(aliasB) return null;
+                
+                b = headA;
+                aliasB = true;
+            }
+            else b = b.next;
+        }
+        
+        return a;
     }
     */
 }
