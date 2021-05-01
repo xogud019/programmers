@@ -81,4 +81,35 @@ public class OddEvenLinkedList {
         
         return answer.next;
     }
+
+    /*
+    public ListNode oddEvenList(ListNode head) {
+        if(head == null) return null;
+        if(head.next == null || head.next.next == null) return head;
+        
+        ListNode odd = new ListNode(head.val), even = new ListNode(head.next.val);
+        head = head.next.next;
+        ListNode answer = odd, evenTemp = even;
+        
+        int cnt = 0;
+        while(head != null){
+            if(cnt%2==0){
+                odd.next = new ListNode(head.val);
+                odd = odd.next;
+            }
+            else{
+                even.next = new ListNode(head.val);
+                even = even.next;
+            }
+            
+            head = head.next;
+            cnt++;
+        }
+        
+        even.next = null;
+        odd.next = evenTemp;
+        
+        return answer;
+    }
+    */
 }

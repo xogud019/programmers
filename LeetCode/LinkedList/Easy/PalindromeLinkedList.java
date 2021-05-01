@@ -26,6 +26,7 @@ The number of nodes in the list is in the range [1, 105].
 0 <= Node.val <= 9
 */
 public class PalindromeLinkedList {
+    //using list
     public boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
         
@@ -42,7 +43,7 @@ public class PalindromeLinkedList {
         
         return true;
     }
-    /*
+    /*using stack
     public boolean isPalindrome(ListNode head) {
         if(head == null) return true;
         if(head.next == null) return true;
@@ -68,6 +69,24 @@ public class PalindromeLinkedList {
         }
         //
         return true;
+    }
+    */
+    /*using StringBuilder
+     public boolean isPalindrome(ListNode head) {
+        if(head == null) return true;
+        if(head.next == null) return true;
+        
+        StringBuilder sb = new StringBuilder();
+        
+        while(head != null){
+            sb.append(""+head.val);
+            head = head.next;
+        }
+        
+        String left = sb.substring(0, sb.length()/2);
+        String right = sb.reverse().substring(0, sb.length()/2);
+        //System.out.println(left+" "+right);
+        return left.equals(right);
     }
     */
 }
