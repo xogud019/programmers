@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClimbingStairs {
+    //top-down recursion
     static Map<Integer, Integer> map = new HashMap<>();
     
     public int climbStairs(int n) {
