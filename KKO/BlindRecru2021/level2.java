@@ -1,4 +1,4 @@
-package KKO.TOS;
+package KKO.BlindRecru2021;
 
 import java.util.ArrayList;
 import java.util.Collections;
