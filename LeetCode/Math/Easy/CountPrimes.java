@@ -45,4 +45,27 @@ public class CountPrimes {
         
         return answer;
     }
+
+    /*Sieve of Eratosthenes
+    public int countPrimes(int n) {
+        int[] era = new int[n];
+        int answer = 0;
+        
+        Arrays.fill(era, 1);
+        
+        for(int i=2; i*i<n; i++){
+            if(era[i] == 1){
+                for(int j=i*i; j<n; j+=i) era[j] = -1;
+            }
+        }
+        
+        //for(int i=2; i<n; i++) System.out.print(era[i]+" ");
+        
+        for(int i=2; i<n; i++){
+            if(era[i] == 1) answer++;
+        }
+        
+        return answer;
+    }
+    */
 }
