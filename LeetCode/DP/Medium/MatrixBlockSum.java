@@ -52,7 +52,7 @@ public class MatrixBlockSum {
         return answer;
     }
     */
-    /*
+    /*brute force
     public int[][] matrixBlockSum(int[][] mat, int K) {
         int row = mat.length;
         int col = mat[0].length;
@@ -75,6 +75,7 @@ public class MatrixBlockSum {
         return answer;
     }
     */
+    //better brute force
     public int[][] matrixBlockSum(int[][] mat, int K) {
         int m = mat.length, n = mat[0].length;
         int[][] answer = new int[m][n];
