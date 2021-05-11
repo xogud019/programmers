@@ -1,4 +1,4 @@
-package LeetCode.BackTracking.Medium;
+package LeetCode.DP.Medium;
 
 //import java.util.HashSet;
 /*
@@ -113,4 +113,22 @@ public int countVowelStrings(int n) {
         
         for(int i=idx; i<vowel.length(); i++) backtracking(n-1, i);
     }
+
+    /*dp
+    public int countVowelStrings(int n) {
+        int[] dp = new int[5];
+        //dp[0] = u, dp[1] = o, dp[2] = i, dp[3] = e, dp[4] = a
+        
+        Arrays.fill(dp, 1);
+        
+        for(int i=2; i<=n; i++){
+            dp[4] += dp[3]+dp[2]+dp[1]+dp[0];
+            dp[3] += dp[2]+dp[1]+dp[0];
+            dp[2] += dp[1]+dp[0];
+            dp[1] += dp[0];
+        }
+        
+        return dp[4]+dp[3]+dp[2]+dp[1]+dp[0];
+    }
+    */
 }
