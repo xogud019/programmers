@@ -43,6 +43,55 @@ public class CountingBits {
         return answer;
     }
     */
+    /*wrong answer
+    public static long[] solution(long[] numbers) {
+        int len  = numbers.length;
+        long[] answer = new long[len];
+        long[] temp = new long[len];
+
+        for(int i=0; i<len; i++){
+            long ns = numbers[i]+1;
+            
+            if(ns%4 != 0 && (ns != (ns&(-ns)))){
+               answer[i] = ns;
+               temp[i] = ns; 
+            }
+            
+            else{
+                
+                if(ns == (ns&(-ns))){
+                    answer[i] = ns -1 + ns/2;
+                }
+                else{
+                    answer[i] = ns + 1 ;
+                }
+                
+                
+                for(long j = numbers[i]+1; ; j++){
+                    long n = numbers[i], nn = j;
+                    int cnt = 0;
+
+                    while(cnt < 3 && nn > 0){
+                        if(n%2 != nn%2) cnt++;
+                        n /= 2;
+                        nn/= 2;
+                    }
+                    //System.out.println(1);
+                    if(cnt < 3){
+                        temp[i] = j;
+                        
+
+                        break;
+                    }
+                }
+            }
+
+            if(ns%4==0 && ns != (ns&(-ns))) System.out.println(numbers[i]+" "+answer[i]+" "+temp[i]);
+        }
+        
+        return answer;
+    }
+    */
     //DP+Math
     public int[] countBits(int num) {
         int[] dp = new int[num+1];
