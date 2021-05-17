@@ -62,7 +62,7 @@ public class BinaryTreeCameras {
             answer++;
             return 2;
         }
-        
+        //have2  coverd3
         if(l == 2 || r == 2) return 3;
         
         return 1;
