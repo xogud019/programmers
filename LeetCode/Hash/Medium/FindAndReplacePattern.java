@@ -48,4 +48,50 @@ public class FindAndReplacePattern {
         
         return true;
     }
+
+    /*
+    public List<String> findAndReplacePattern(String[] words, String pattern) {
+        List<String> answer = new ArrayList<>();
+        
+        if(pattern.length() == 1){
+            for(String word : words){
+                if(word.length() == 1) answer.add(word);
+            }
+            
+            return answer;
+        }
+        
+        HashMap<Character, Character> map1, map2;
+        boolean same;
+        
+        for(String word : words){
+            map1 = new HashMap<>();
+            map2 = new HashMap<>();
+            same = true;
+            
+            for(int i=0; i<word.length(); i++){
+                char c1 = word.charAt(i), c2 = pattern.charAt(i);
+                
+                if(!map1.containsKey(c1)) map1.put(c1, c2);
+                else{
+                    if(map1.get(c1) != c2){
+                        same = false;
+                        break;
+                    }
+                }
+                if(!map2.containsKey(c2)) map2.put(c2, c1);
+                else{
+                    if(map2.get(c2) != c1){
+                        same = false;
+                        break;
+                    }
+                }
+            }
+            
+            if(same) answer.add(word);
+        }
+        
+        return answer;
+    }
+    */
 }
