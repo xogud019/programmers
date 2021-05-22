@@ -56,7 +56,7 @@ public class AllPathsFromSourceToTarget {
         list.add(node);
         
         if(node == graph.length-1){
-            answer.add(new ArrayList(list));
+            answer.add(new ArrayList<Integer>(list));
             return;
         }
         else{
