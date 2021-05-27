@@ -67,4 +67,27 @@ public class Triangle {
         
         return answer;
     }
+    /*
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int m = triangle.size();
+        
+        if(m == 1) return triangle.get(0).get(0);
+        //left, right end
+        for(int i=1; i<m; i++){
+            triangle.get(i).set(0, triangle.get(i).get(0) + triangle.get(i-1).get(0));
+            triangle.get(i).set(triangle.get(i).size()-1, triangle.get(i).get(triangle.get(i).size()-1) + triangle.get(i-1).get(triangle.get(i-1).size()-1));
+        }
+                
+        //middle
+        for(int i=1; i<m; i++){
+            for(int j=1; j<triangle.get(i).size()-1; j++) triangle.get(i).set(j, Math.min(triangle.get(i-1).get(j-1), triangle.get(i-1).get(j))+triangle.get(i).get(j));
+        }
+        
+        int answer = Integer.MAX_VALUE;
+        
+        for(int i=0; i<triangle.get(m-1).size(); i++) answer = Math.min(answer , triangle.get(m-1).get(i));
+        
+        return answer;
+    }
+    */
 }
