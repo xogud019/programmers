@@ -56,4 +56,40 @@ public class OnesAndZeroes{
         
         return answer;
     }
+    /*
+    public int findMaxForm(String[] strs, int m, int n) {
+        int[][] dp = new int[m+1][n+1];
+        //m = 0, n = 1
+        for(String s:strs){
+            int[] nums = counting(s);
+            
+            for(int i=m; i >= 0; i--){
+                for(int j=n; j >= 0; j--){
+                    if(i >= nums[0] && j >= nums[1]) dp[i][j] = Math.max(dp[i][j], dp[i-nums[0]][j-nums[1]]+1);
+                }
+            }
+        }
+               
+        //print(dp);
+        return dp[m][n];
+    }
+    
+    public void print(int[][] dp){
+        for(int[] i:dp){
+            for(int j:i) System.out.print(j+" ");
+            System.out.println();
+        }
+    }
+    
+    public int[] counting(String s){
+        int[] arr = new int[2];
+        
+        for(char c:s.toCharArray()){
+            if(c == '1') arr[1]++;
+            else arr[0]++;
+        }
+        
+        return arr;
+    }
+    */
 }
