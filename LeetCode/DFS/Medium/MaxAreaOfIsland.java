@@ -60,4 +60,41 @@ public class MaxAreaOfIsland {
         
         return;
     }
+    /*
+    int[] X = {1, 0, -1, 0};
+    int[] Y = {0, 1, 0, -1};
+    boolean[][] visited;
+    int answer ,count;
+    
+    public int maxAreaOfIsland(int[][] grid) {
+        answer = 0;
+        
+        int m = grid.length, n = grid[0].length;
+        visited = new boolean[m][n];
+        
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                if(!visited[i][j] && grid[i][j] == 1){
+                    count = 0;
+                    dfs(grid, i, j);
+                    answer = Math.max(answer, count);
+                }
+            }
+        }
+        
+        return answer;
+    }
+    
+    public void dfs(int[][] grid, int x, int y){
+        count++;
+        visited[x][y] = true;
+        
+        for(int i=0; i<4; i++){
+            int newX = x+X[i];
+            int newY = y+Y[i];
+            
+            if(newX >=0 && newY >= 0 && newX < grid.length && newY < grid[0].length && !visited[newX][newY] && grid[newX][newY] == 1) dfs(grid, newX, newY);
+        }
+    }
+    */
 }
