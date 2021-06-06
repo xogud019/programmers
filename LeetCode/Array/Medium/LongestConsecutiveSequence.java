@@ -47,7 +47,7 @@ public class LongestConsecutiveSequence {
         return answer;
     }
     */
-    //415ms
+    //415ms 
     public int longestConsecutive(int[] nums) {
         HashSet<Integer> set = new HashSet<>(), check = new HashSet<>();
         int answer = 0;
