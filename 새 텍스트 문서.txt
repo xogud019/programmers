@@ -1,0 +1,97 @@
+Minimum Number of People to Teach
+Decode XORed Permutation
+Count Ways to Make Array With Product
+
+Find Kth Largest XOR Coordinate Value5
+Building Boxes
+
+Restore the Array From Adjacent Pairs
+Can You Eat Your Favorite Candy on Your Favorite Day?5
+Palindrome Partitioning IV
+
+Sum of Unique Elements3
+Maximum Absolute Sum of Any Subarray4
+Minimum Length of String After Deleting Similar Ends4
+Maximum Number of Events That Can Be Attended II
+
+Check if Array Is Sorted and Rotated3
+Maximum Score From Removing Stones4
+Largest Merge Of Two Strings5
+Closest Subsequence Sum
+
+Minimum Changes To Make Alternating Binary String3
+Count Number of Homogenous Substrings4
+Minimum Limit of Balls in a Bag5
+Minimum Degree of a Connected Trio in a Graph
+
+Longest Nice Substring3
+Form Array by Concatenating Subarrays of Another Array4
+Map of Highest Peak6
+Tree of Coprimes
+
+Maximum Score from Performing Multiplication Operations5
+Maximize Palindrome Length From Subsequences
+
+Closest Dessert Cost4
+Equal Sum Arrays With Minimum Number of Operations5
+Car Fleet II
+
+Count Pairs Of Nodes
+
+Number of Restricted Paths From First to Last Node6
+Make the XOR of All Segments Equal to Zero
+
+Maximum Average Pass Ratio5
+Maximum Score of a Good Subarray
+
+Maximum Number of Consecutive Values You Can Make5
+Maximize Score After N Operations
+
+Number of Orders in the Backlog5
+Maximum Value at a Given Index in a Bounded Array5
+Count Pairs With XOR in a Range
+
+Maximize Number of Nice Divisors
+
+Count Nice Pairs in an Array5
+Maximum Number of Groups Getting Fresh Donuts
+
+Minimum Absolute Sum Difference5
+Number of Different Subsequences GCDs
+
+Minimum Sideway Jumps5
+Finding MK Average
+
+Minimum Number of Operations to Make String Sorted
+
+Single-Threaded CPU5
+Find XOR Sum of All Pairs Bitwise AND
+
+Closest Room
+
+Splitting a String Into Descending Consecutive Values4
+Minimum Adjacent Swaps to Reach the Kth Smallest Number5
+Minimum Interval to Include Each Query
+
+Maximum Distance Between a Pair of Values4
+Maximum Subarray Min-Product5
+Largest Color Value in a Directed Graph
+
+Sum of Floored Pairs
+
+Minimum Number of Swaps to Make the Binary String Alternating4
+Finding Pairs With a Certain Sum5
+Number of Ways to Rearrange Sticks With K Sticks Visible
+
+Minimum Speed to Arrive on Time4
+Jump Game VII5
+Stone Game VIII
+
+Get Biggest Three Rhombus Sums in a Grid5
+Minimum XOR Sum of Two Arrays
+
+Process Tasks Using Servers5
+Minimum Skips to Arrive at Meeting On Time.
+
+Minimum Number of Flips to Make the Binary String Alternating5
+Minimum Space Wasted From Packaging
