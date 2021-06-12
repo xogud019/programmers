@@ -91,3 +91,6 @@ Minimum Skips to Arrive at Meeting On Time.
 
 Minimum Number of Flips to Make the Binary String Alternating5
 Minimum Space Wasted From Packaging
+
+Largest Magic Square5
+Minimum Cost to Change the Final Value of Expression
