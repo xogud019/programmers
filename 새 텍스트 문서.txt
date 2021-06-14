@@ -94,3 +94,7 @@ Minimum Space Wasted From Packaging
 
 Largest Magic Square5
 Minimum Cost to Change the Final Value of Expression
+
+Maximum Number of Removable Characters4
+Merge Triplets to Form Target Triplet5
+The Earliest and Latest Rounds Where Players Compete

@@ -1,4 +1,4 @@
-package LeetCode.Array.Easy;
+package LeetCode.Greedy.Easy;
 
 import java.util.*;
 
@@ -65,4 +65,23 @@ public class MaximumUnitsOnATruck {
         
         return answer;
     }
+    /*
+    public int maximumUnits(int[][] boxTypes, int truckSize) {
+        Arrays.sort(boxTypes, (a,b) -> b[1]-a[1]);
+        int answer = 0;
+        
+        for(int[] box:boxTypes){
+            if(box[0] <= truckSize){
+                answer += box[0]*box[1];
+                truckSize -= box[0];
+            }    
+            else{
+                answer += truckSize * box[1];
+                break;
+            }
+        }
+        
+        return answer;
+    }
+    */
 }
