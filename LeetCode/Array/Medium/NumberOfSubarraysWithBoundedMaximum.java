@@ -69,4 +69,43 @@ public class NumberOfSubarraysWithBoundedMaximum {
         
         return answer;
     }
+
+    //idea
+    /*
+    the idea is based on: if array is valid, the all the subarray ends at its maximum value is also valid:
+    a small example:
+    [1,2,4] ,and L = 4, R = 5:
+    4 is the maximum value, then all the subarray ends at 4 will be valid, which is [4], [2, 4], [1, 2, 4], so res = 3
+    the code is
+
+    if(A[i] >= L)
+        last = i;
+    res += last - start;
+    then what if we have these smaller values than peak value:
+    [1,2,4,3,0] and L = 4, R = 5:
+    then valid subarray ends at 3 are [4, 3], [2, 4, 3], [1, 2, 4, 3],
+    same thing, valid subarray ends at 0 are [4, 3, 0], [2, 4, 3, 0], [1,2,4,3,0],
+    the code is:
+
+    res += last - start;
+    */
+    /*short
+    public int numSubarrayBoundedMax(int[] nums, int left, int right) {
+        int n = nums.length, start = -1, end = -1, answer = 0;
+        
+        for(int i=0; i<n; i++){
+            if(nums[i] > right){
+                end = i;
+                start = i;
+                continue;
+            }
+            
+            if(nums[i] >= left) end = i;
+            
+            answer += end - start;
+        }
+        
+        return answer;
+    }
+    */
 }
