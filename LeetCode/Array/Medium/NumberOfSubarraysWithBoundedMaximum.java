@@ -50,4 +50,23 @@ public class NumberOfSubarraysWithBoundedMaximum {
         return answer;
     }
     */
+    public int numSubarrayBoundedMax(int[] nums, int left, int right) {
+        int n = nums.length, count = 0, j = 0, answer = 0;
+        
+        for(int i=0; i<n; i++){
+            int num = nums[i];
+            
+            if(num >= left && num <= right){
+                count = i - j + 1;
+                answer += count;
+            }
+            else if(num < left) answer += count;
+            else{
+                count = 0;
+                j = i+1;
+            }
+        }
+        
+        return answer;
+    }
 }
