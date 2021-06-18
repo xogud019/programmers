@@ -1,4 +1,4 @@
-package LeetCode.Tree.Medium;
+package LeetCode.BinaryIndexedTree.Medium;
 //Binary Indexed Tree || Segment Tree
 /*
 Given an integer array nums, handle multiple queries of the following types:
@@ -60,4 +60,54 @@ public class RangeSumQueryMutable {
     }
 
     */
+    class NumArray {
+        int[] bit, nums;
+        int n;
+        
+        public NumArray(int[] nums) {
+            n = nums.length;
+            bit = new int[n+1];
+            this.nums = nums;
+            
+            for(int i=0; i<n; i++) bUpdate(i, nums[i]);
+        }
+        
+        public void bUpdate(int index, int val) {
+            int idx = index+1;
+            
+            while(idx < n+1){
+                bit[idx] += val;
+                idx += (idx & -idx);
+            }
+        }
+        
+        public void update(int index, int val) {
+            int diff = val - nums[index];
+            
+            nums[index] = val;
+            
+            int idx = index + 1;
+            
+            while(idx < n+1){
+                bit[idx] += diff;
+                idx += (idx & -idx);
+            }
+        }
+        
+        public int sumRange(int left, int right) {
+            return getSum(right) - getSum(left-1);
+        }
+        
+        public int getSum(int index){
+            int sum = 0, idx = index + 1;
+            
+            while(idx > 0){
+                sum += bit[idx];
+                idx -= (idx&-idx);
+            }
+            
+            return sum;
+        }
+    }
+    
 }
