@@ -102,3 +102,28 @@ The Earliest and Latest Rounds Where Players Compete
 The Number of Full Rounds You Have Played4
 Count Sub Islands5
 Minimum Absolute Difference Queries
+
+June
+Number of Matching Subsequences
+Paint House
+Interleaving String+10 LeetCoin 
+Open the Lock
+Maximum Performance of a Team
+Longest Consecutive Sequence
+Min Cost Climbing Stairs
+The Maze II
+Construct Binary Tree from Preorder and Inorder Traversal
+Jump Game VI
+My Calendar I
+Stone Game VII
+Minimum Number of Refueling Stops
+Palindrome Pairs
+Maximum Units on a Truck
+Shortest Distance to Target Color
+Matchsticks to Square
+Number of Subarrays with Bounded Maximum
+Range Sum Query - Mutable
+K Inverse Pairs Array
+Swim in Rising Water
+All Paths from Source Lead to Destination
+Number of Matching Subsequences
