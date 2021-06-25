@@ -69,4 +69,31 @@ public class OutOfBoundaryPaths {
         return (int)(answer%mod);
     }
     */
+    static final int mod = 1000000007;
+    static int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+    
+    public int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
+        int[][] dp = new int[m][n];
+        dp[startRow][startColumn] = 1;
+        int answer = 0;
+        
+        for(int k=0; k<maxMove; k++){
+            int[][] temp = new int[m][n];
+            
+            for(int i=0; i<m; i++){
+                for(int j=0; j<n; j++){
+                    for(int[] d:dir){
+                        int x = i + d[0], y = j + d[1];
+                        
+                        if(x < 0 || x >= m || y < 0 || y >= n) answer = (answer + dp[i][j])%mod;
+                        else temp[x][y] = (temp[x][y] + dp[i][j])%mod;
+                    }
+                }
+            }
+            
+            dp = temp;
+        }
+        
+        return answer;
+    }
 }
