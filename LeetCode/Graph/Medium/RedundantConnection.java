@@ -68,4 +68,38 @@ public class RedundantConnection {
         }
     }
     */
+    //union find
+    /*
+    public int[] findRedundantConnection(int[][] edges) {
+        int n = edges.length;
+        int[] tree = new int[n+1];
+        Arrays.fill(tree, -1);
+        
+        for(int[] edge : edges){
+            int u = find(tree, edge[0]);
+            int v = find(tree, edge[1]);
+            
+            if(u == v) return edge;
+            
+            union(tree, u, v);
+        }
+        
+        return new int[]{-1, -1};
+    }
+    
+    public int find(int[] tree, int node){
+        int parent = -1;
+        
+        while(node != -1){
+            parent = node;
+            node = tree[parent];
+        }
+        
+        return parent;
+    }
+    
+    public void union(int[] tree, int u, int v){
+        tree[u] = v;
+    }
+    */
 }
