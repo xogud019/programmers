@@ -103,6 +103,9 @@ The Number of Full Rounds You Have Played4
 Count Sub Islands5
 Minimum Absolute Difference Queries
 
+Maximum Alternating Subsequence Sum5
+Design Movie Rental System
+
 June
 Paint House
 Interleaving String+10 LeetCoin 
