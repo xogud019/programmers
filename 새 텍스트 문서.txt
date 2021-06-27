@@ -106,6 +106,10 @@ Minimum Absolute Difference Queries
 Maximum Alternating Subsequence Sum5
 Design Movie Rental System
 
+Cyclically Rotating a Grid4
+Number of Wonderful Substrings5
+Count Ways to Build Rooms in an Ant Colony
+
 June
 Paint House
 Interleaving String+10 LeetCoin 
