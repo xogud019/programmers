@@ -31,7 +31,6 @@ rows	columns	queries	result
 100	97	[[1,1,100,97]]	[1]
 */
 public class RotatingMatrixBorders {
-    /*temp
     public int[] solution(int rows, int columns, int[][] queries) {
         int n = queries.length;
         int[] answer = new int[n];
@@ -46,12 +45,13 @@ public class RotatingMatrixBorders {
         
         for(int[] q:queries){
             answer[idx++] = outerRotate(board, q[0]-1, q[1]-1, q[2]-1, q[3]-1);
-            
+            /*
             for(int[] i:board){
                 for(int j:i) System.out.print(j+" ");
                 System.out.println();
             }
             System.out.println();
+            */
         }
         
         return answer;
@@ -64,20 +64,46 @@ public class RotatingMatrixBorders {
         prev = board[x1][y1];
         //first row
         for(int i=y1+1; i<=y2; i++){
+            min = Math.min(min, prev);
             cur = board[x1][i];
             board[x1][i] = prev;
             prev = cur;
         }
         
-        row++;
-        
+        x1++;
         //last col
         
-        for(int i)
+        for(int i=x1; i<=x2; i++){
+            min = Math.min(min, prev);
+            cur = board[i][y2];
+            board[i][y2] = prev;
+            prev = cur;
+        }
+        
+        y2--;
+        
+        //last row
+        
+        for(int i=y2; i>=y1; i--){
+            min = Math.min(min, prev);
+            cur = board[x2][i];
+            board[x2][i] = prev;
+            prev = cur;
+        }
+        
+        x2--;
+        
+        //first col
+        
+        for(int i=x2; i>=x1-1; i--){
+            min = Math.min(min, prev);
+            cur = board[i][y1];
+            board[i][y1] = prev;
+            prev = cur;
+        }
         
         return min;
     }
-    */
 }
 
 /*
