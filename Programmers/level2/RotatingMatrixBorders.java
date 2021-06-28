@@ -34,6 +34,7 @@ public class RotatingMatrixBorders {
     /*temp
     public int[] solution(int rows, int columns, int[][] queries) {
         int n = queries.length;
+        int[] answer = new int[n];
         int[][] board = new int[rows][columns];
         int idx = 1;
         
@@ -41,18 +42,44 @@ public class RotatingMatrixBorders {
             for(int j=0; j<columns; j++) board[i][j] = idx++;
         }
         
-        return new int[n];
+        idx = 0;
+        
+        for(int[] q:queries){
+            answer[idx++] = outerRotate(board, q[0]-1, q[1]-1, q[2]-1, q[3]-1);
+            
+            for(int[] i:board){
+                for(int j:i) System.out.print(j+" ");
+                System.out.println();
+            }
+            System.out.println();
+        }
+        
+        return answer;
     }
     
-    public void outerRotate(int[][] board, int x1, int y1, int x2, int y2){
+    public int outerRotate(int[][] board, int x1, int y1, int x2, int y2){
         int cur = 0, prev = 0;
+        int min = Integer.MAX_VALUE;
         
-        cur = board[x1][y2];
+        prev = board[x1][y1];
+        //first row
+        for(int i=y1+1; i<=y2; i++){
+            cur = board[x1][i];
+            board[x1][i] = prev;
+            prev = cur;
+        }
         
+        row++;
         
+        //last col
+        
+        for(int i)
+        
+        return min;
     }
     */
 }
+
 /*
 **ex 2243
 **first row x1-1, y1-1, ~ x1-1, y2-1 (move only col)
