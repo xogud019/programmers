@@ -137,3 +137,6 @@ Out of Boundary Paths
 Redundant Connection
 Count of Smaller Numbers After Self
 Candy
+
+July
+Find K Closest Elements
