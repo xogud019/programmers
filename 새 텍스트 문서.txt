@@ -110,6 +110,10 @@ Cyclically Rotating a Grid4
 Number of Wonderful Substrings5
 Count Ways to Build Rooms in an Ant Colony
 
+Eliminate Maximum Number of Monsters4
+Count Good Numbers4
+Longest Common Subpath
+
 June
 Paint House
 Interleaving String+10 LeetCoin 
