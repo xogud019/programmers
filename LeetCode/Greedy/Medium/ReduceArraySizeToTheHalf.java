@@ -45,6 +45,7 @@ Constraints:
 3.1 <= arr[i] <= 10^5
 */
 public class ReduceArraySizeToTheHalf {
+    //84ms using map, list
     public int minSetSize(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
@@ -65,4 +66,51 @@ public class ReduceArraySizeToTheHalf {
         
         return answer; 
     }
+    /*40ms using map, list
+    public int minSetSize(int[] arr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for(int i:arr) map.put(i, map.getOrDefault(i, 0) + 1);
+        
+        List<Integer> list = new ArrayList<>();
+        
+        for(int i:map.keySet()) list.add(map.get(i));
+        
+        Collections.sort(list, Collections.reverseOrder());
+        
+        int n = arr.length;
+        int half = n/2, answer = 0, sum = 0;
+        
+        for(int i:list){
+            sum += i;
+            answer++;
+            
+            if(n-sum <= half) return answer;
+        }
+        
+        return answer;
+    }
+    */
+
+    /*39ms using pq(heap)
+    public int minSetSize(int[] arr) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for(int i:arr) map.put(i, map.getOrDefault(i,0)+1);
+        
+        for(int i:map.keySet()) pq.add(map.get(i));
+        
+        int n = arr.length, len = n/2, answer = 0;
+        
+        while(!pq.isEmpty()){
+            n -= pq.poll();
+            answer++;
+            
+            if(n <= len) return answer;
+        }
+        
+        return answer;
+    }
+    */
 }
