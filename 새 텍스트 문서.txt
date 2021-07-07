@@ -116,7 +116,7 @@ Longest Common Subpath
 
 June
 Paint House
-Interleaving String+10 LeetCoin 
+Interleaving String
 Open the Lock
 Maximum Performance of a Team
 Longest Consecutive Sequence

@@ -52,22 +52,33 @@ public class KthSmallestElementInASortedMatrix {
 
         return num;
     }
-    /*
-     * 0ms public int kthSmallest(int[][] matrix, int k) { int n = matrix.length;
-     * int lo = matrix[0][0], hi = matrix[n-1][n-1];
-     * 
-     * while(lo < hi){ int mid = lo + (hi - lo)/2;
-     * 
-     * if(countLessThanM(matrix, mid, n) < k) lo = mid + 1; else hi = mid; }
-     * 
-     * return lo; }
-     * 
-     * public int countLessThanM(int[][] matrix, int mid, int n){ int r = 0, c =
-     * n-1, count = 0;
-     * 
-     * while(r < n && c >= 0){ if(matrix[r][c] <= mid){ r++; count += (c + 1); }
-     * else c--; }
-     * 
-     * return count; }
-     */
+    /*0ms
+    public int kthSmallest(int[][] matrix, int k) {
+        int n = matrix.length;
+        int lo = matrix[0][0], hi = matrix[n-1][n-1];
+        
+        while(lo < hi){
+            int mid = lo + (hi - lo)/2;
+            
+            if(countLessThanM(matrix, mid, n) < k) lo = mid + 1;
+            else hi = mid;
+        }
+        
+        return lo;
+    }
+    
+    public int countLessThanM(int[][] matrix, int mid, int n){
+        int r = 0, c = n-1, count = 0;
+        
+        while(r < n && c >= 0){
+            if(matrix[r][c] <= mid){
+                r++;
+                count += (c + 1);
+            }
+            else c--;
+        }
+        
+        return count;
+    }
+    */
 }
