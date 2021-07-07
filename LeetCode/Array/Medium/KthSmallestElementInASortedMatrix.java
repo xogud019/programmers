@@ -52,7 +52,7 @@ public class KthSmallestElementInASortedMatrix {
 
         return num;
     }
-    /*0ms
+    /*
     public int kthSmallest(int[][] matrix, int k) {
         int n = matrix.length;
         int lo = matrix[0][0], hi = matrix[n-1][n-1];
