@@ -1,3 +1,5 @@
+package Note;
+
 public class word {
     public static void main(String[] args){
         String word = "EIO";

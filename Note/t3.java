@@ -1,3 +1,5 @@
+package Note;
+
 public class t3 {
     static int[] answer;
     static int[] X = {-1, 0, 1, 0};

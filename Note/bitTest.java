@@ -1,3 +1,5 @@
+package Note;
+
 public class bitTest {
     public static void main(String[] args){
         int idx = 3;

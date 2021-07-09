@@ -1,3 +1,5 @@
+package Note;
+
 public class temp {
     /*
     public int solution(int left, int right) {

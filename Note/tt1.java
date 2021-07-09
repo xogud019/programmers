@@ -1,3 +1,5 @@
+package Note;
+
 public class tt1{
     public int solution(int[] a, int[] b) {
         int answer = 0;

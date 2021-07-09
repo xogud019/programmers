@@ -1,3 +1,5 @@
+package Note;
+
 public class t2 {
     public String solution(String encrypted_text, String key, int rotation) {
         char[] dec = encrypted_text.toCharArray();

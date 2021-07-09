@@ -1,3 +1,5 @@
+package Note;
+
 import java.util.*;
 
 public class t1 {

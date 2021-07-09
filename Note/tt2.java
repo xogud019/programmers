@@ -1,3 +1,5 @@
+package Note;
+
 public class tt2 {
     public int[] solution(String s) {
         int[] answer = new int[2];

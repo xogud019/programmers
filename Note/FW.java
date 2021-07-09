@@ -1,3 +1,5 @@
+package Note;
+
 public class FW {
     static int INF = 10000000;
     public static void main(String[] args){

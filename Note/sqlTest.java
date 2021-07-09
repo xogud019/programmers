@@ -1,3 +1,5 @@
+package Note;
+
 import java.sql.*;
 
 public class sqlTest {

@@ -1,3 +1,5 @@
+package Note;
+
 public class Dijkstra {
     static class Graph{
         int n;

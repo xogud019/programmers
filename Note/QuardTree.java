@@ -1,3 +1,5 @@
+package Note;
+
 public class QuardTree {
     static int base = 0;
     public int[] solution(int[][] arr) {

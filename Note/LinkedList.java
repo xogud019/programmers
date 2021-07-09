@@ -1,3 +1,5 @@
+package Note;
+
 import java.util.*;
 //study
 class Node {

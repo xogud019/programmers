@@ -1,10 +1,8 @@
-import java.util.*;
+package Note;
+
 public class aaa {
-    public static void main(String[] args){
-        Set<Integer> set = new HashSet<>();
-        
+    public static void main(String[] args){        
         int n = 5;
-        int[] answer;
         int x = -1;
         int y = 0;
         int num=1;
