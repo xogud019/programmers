@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package CodingTest.LeetCode.Medium;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
