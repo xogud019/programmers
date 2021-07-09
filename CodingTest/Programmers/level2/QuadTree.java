@@ -1,4 +1,4 @@
-package Programmers.level2;
+package CodingTest.Programmers.level2;
 
 public class QuadTree {
     static int base = 0;

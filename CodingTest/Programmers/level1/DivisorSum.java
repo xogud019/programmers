@@ -1,4 +1,4 @@
-package Programmers.level1;
+package CodingTest.Programmers.level1;
 
 public class DivisorSum {
     public static void main(String[] args){

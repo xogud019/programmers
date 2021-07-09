@@ -1,4 +1,4 @@
-package Programmers.level3;
+package CodingTest.Programmers.level3;
 
 import java.util.LinkedList;
 import java.util.Queue;

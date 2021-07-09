@@ -1,4 +1,4 @@
-package Programmers.level1;
+package CodingTest.Programmers.level1;
 import java.util.*;
 public class Budget {
     public static void main(String[] args){

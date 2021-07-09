@@ -1,4 +1,4 @@
-package Programmers.level3;
+package CodingTest.Programmers.level3;
 
 //not
 public class SteppingStone {

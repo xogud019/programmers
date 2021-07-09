@@ -1,4 +1,4 @@
-package Programmers.level1;
+package CodingTest.Programmers.level1;
 
 public class SumPlusMinus {
     public int solution(int[] absolutes, boolean[] signs) {

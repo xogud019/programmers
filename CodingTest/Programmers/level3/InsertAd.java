@@ -1,4 +1,4 @@
-package Programmers.level3;
+package CodingTest.Programmers.level3;
 /*
 참고로 광고는 재생 중인 동영상의 오른쪽 아래에서 원래 영상과 동시에 재생되는 PIP(Picture in Picture) 형태로 제공됩니다.
 

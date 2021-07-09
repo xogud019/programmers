@@ -1,4 +1,4 @@
-package Programmers.level1;
+package CodingTest.Programmers.level1;
 
 public class GetCenterString {
     public static void main(String[] args){

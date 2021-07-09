@@ -1,4 +1,4 @@
-package Programmers.level4;
+package CodingTest.Programmers.level4;
 
 import java.util.*;
 //time limit ->using trie

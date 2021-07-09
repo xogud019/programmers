@@ -1,4 +1,4 @@
-package Programmers.level1;
+package CodingTest.Programmers.level1;
 /*
 로또의 최고 순위와 최저 순위
 문제 설명
